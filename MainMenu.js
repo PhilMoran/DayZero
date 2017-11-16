@@ -28,10 +28,10 @@ class MainMenu
 			app.ctx.font = "40px NONSTOP";
 			app.ctx.fillStyle = "red";
 
-			this.playText = 'Play'
-			this.gameText = 'Sound Options'
-			this.soundText = 'Game Options'
-			this.quitText = 'Quit'
+			this.playText = 'Play';
+			this.gameText = 'Sound Options';
+			this.soundText = 'Game Options';
+			this.quitText = 'Quit';
 
 			app.ctx.fillText(this.playText,130,this.height - 580);
 			app.ctx.fillText(this.gameText,130,this.height - 420);

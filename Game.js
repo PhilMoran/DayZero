@@ -31,7 +31,8 @@ class Game
  		}
  		if(app.scenemanager.scene ==4)	// lose sceen
 		{
- 			
+ 			app.gameOver.Draw();
+ 			app.gameOver.Update();
  		}
  		if(app.scenemanager.scene ==5)	// win screen
 		{
