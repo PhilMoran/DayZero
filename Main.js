@@ -8,8 +8,8 @@ function main()
     app.canvas = document.createElement("canvas");
     //Adds the canvas element to the document 
     document.body.appendChild(app.canvas);
-    app.canvas.width = 1280;
-    app.canvas.height = 720;
+    app.canvas.width = window.innerWidth;
+    app.canvas.height = window.innerHeight;
     app.ctx = app.canvas.getContext("2d");
 
 
