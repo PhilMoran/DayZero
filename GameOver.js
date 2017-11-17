@@ -22,8 +22,8 @@ class GameOver
 			this.buttonImg.src = 'button.png';
 
 			app.ctx.drawImage(this.endSprite,this.x,this.y,this.width,this.height);
-			app.ctx.drawImage(this.buttonImg,100,this.height - 120, 300, 60);
-			app.ctx.drawImage(this.buttonImg,this.width - 400,this.height - 120, 300, 60);
+			app.ctx.drawImage(this.buttonImg, this.width - 300, this.height - 120, 200, 60);
+			app.ctx.drawImage(this.buttonImg, this.width - 300, this.height - 240, 200, 60);
 
 			app.ctx = app.canvas.getContext("2d");
 			app.ctx.font = "40px NONSTOP";
@@ -35,8 +35,8 @@ class GameOver
 			this.credits = 'Created by David Price & Phillip Moran';
 
 			app.ctx.fillText(this.titleText,this.width/2 - 100, 100);
-			app.ctx.fillText(this.menuText,130,this.height - 80);
-			app.ctx.fillText(this.quitText,this.width - 370 ,this.height - 80);
+			app.ctx.fillText(this.menuText, this.width - 260, this.height - 200);
+			app.ctx.fillText(this.quitText, this.width - 260, this.height - 80);
 	}
 
 	Update()
@@ -49,10 +49,6 @@ class GameOver
 		{
 			app.ctx.fillText(this.credits,this.width/3 ,250);
 			app.ctx.fillText(this.credits,this.width/4 ,this.scroll--);
-		}
-		else
-		{
-			app.ctx.fillText(this.credits,this.width/4 ,250);
 		}
 	}
 }

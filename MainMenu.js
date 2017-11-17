@@ -20,8 +20,8 @@ class MainMenu
 
 			app.ctx.drawImage(this.menuSprite,this.x,this.y,this.width,this.height);
 			app.ctx.drawImage(this.buttonImg,100,this.height - 620, 300, 60);
-			app.ctx.drawImage(this.buttonImg,100,this.height - 460, 300, 60);
-			app.ctx.drawImage(this.buttonImg,100,this.height - 300, 300, 60);
+			app.ctx.drawImage(this.buttonImg,100,this.height - 460, 420, 60);
+			app.ctx.drawImage(this.buttonImg,100,this.height - 300, 420, 60);
 			app.ctx.drawImage(this.buttonImg,100,this.height - 140, 300, 60);
 
 			app.ctx = app.canvas.getContext("2d");
