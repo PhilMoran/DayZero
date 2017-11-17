@@ -22,7 +22,7 @@ class Game
  		}
  		if(app.scenemanager.scene ==2)	// sound options
 		{
- 			
+ 			app.soundOptions.Draw();
  		}
 		if(app.scenemanager.scene ==3)	// game 
 		{

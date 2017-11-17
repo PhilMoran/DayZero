@@ -7,7 +7,12 @@ class SceneManager
 	}
 	currentScene()
 	{
-		
+		app.game = new Game();
+		app.mainmenu = new MainMenu();
+		app.gameOver = new GameOver();
+		app.soundOptions = new SoundOptions();
+		app.player = new Player();
+
 		
 		if(this.scene ==0)	// main menu
 		{ 
@@ -20,7 +25,7 @@ class SceneManager
 		}
 		if(this.scene == 2)	// sound options
 		{
-
+			app.game.Update();
 		}
 		if(this.scene == 3)	// game
 		{
