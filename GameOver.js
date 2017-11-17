@@ -43,11 +43,11 @@ class GameOver
 	{
 		if(this.scroll > 250)
 		{
-			app.ctx.fillText(this.credits,30 ,this.scroll--);
+			app.ctx.fillText(this.credits,this.width/3 ,this.scroll--);
 		}
 		else
 		{
-			app.ctx.fillText(this.credits,30 ,250);
+			app.ctx.fillText(this.credits,this.width/3 ,250);
 		}
 	}
 }

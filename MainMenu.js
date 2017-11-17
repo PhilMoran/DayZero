@@ -39,4 +39,5 @@ class MainMenu
 			app.ctx.fillText(this.quitText,130,this.height - 100);
 
 	}
+
 }

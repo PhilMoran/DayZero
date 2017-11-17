@@ -2,18 +2,15 @@ class SceneManager
 {
 	constructor()
 	{
-		this.scene = 4;
+		this.scene = 0;
 
 	}
 	currentScene()
 	{
-		app.game = new Game();
-		app.mainmenu = new MainMenu();
-		app.gameOver = new GameOver();
-		app.player = new Player();
+		
 		
 		if(this.scene ==0)	// main menu
-		{
+		{ 
 			app.game.Update();
 			console.log("MainMenuLOADED");
 		}
@@ -40,4 +37,5 @@ class SceneManager
 
 		}
 	}
+	
 }

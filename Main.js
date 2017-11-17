@@ -12,8 +12,13 @@ function main()
     app.canvas.height = window.innerHeight;
     app.ctx = app.canvas.getContext("2d");
 
-
+	document.addEventListener("touchend", menuTapControls, false);
+	document.addEventListener("touchstart", menuTapControls, false);
 	app.scenemanager = new SceneManager();
+	app.game = new Game();
+	app.mainmenu = new MainMenu();
+	app.gameOver = new GameOver();
+	app.player = new Player();
 	app.scenemanager.currentScene();
 
 }
