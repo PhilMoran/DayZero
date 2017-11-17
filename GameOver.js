@@ -50,9 +50,9 @@ class GameOver
 			app.ctx.fillText(this.credits,this.width/3 ,250);
 			app.ctx.fillText(this.credits,this.width/4 ,this.scroll--);
 		}
-		else
-		{
-			app.ctx.fillText(this.credits,this.width/4 ,250);
-		}
+		//else
+		//{
+		//	app.ctx.fillText(this.credits,this.width/4 ,250);
+		//}/*
 	}
 }
