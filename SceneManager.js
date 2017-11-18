@@ -11,6 +11,7 @@ class SceneManager
 		app.mainmenu = new MainMenu();
 		app.gameOver = new GameOver();
 		app.soundOptions = new SoundOptions();
+		app.gameOptions = new GameOptions();
 		app.player = new Player();
 
 		
@@ -21,7 +22,7 @@ class SceneManager
 		}
 		if(this.scene ==1)	// game options
 		{
-			
+			app.game.Update();
 		}
 		if(this.scene == 2)	// sound options
 		{

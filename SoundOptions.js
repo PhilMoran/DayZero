@@ -48,7 +48,7 @@ class SoundOptions
 			app.ctx.fillText(this.backText,this.width - 110 ,this.height - 155);
 			app.ctx.fillText(this.optionSound,this.width/2 - 60 , 40);
 	}
-	Update()
+	UpdateEffects()
 	{
 		// when button touched swap soundImg
 

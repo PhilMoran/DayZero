@@ -18,7 +18,7 @@ class Game
 		}
 		if(app.scenemanager.scene ==1)	// game options
 		{
- 			
+ 			app.gameOptions.Draw();
  		}
  		if(app.scenemanager.scene ==2)	// sound options
 		{

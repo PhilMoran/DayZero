@@ -21,6 +21,12 @@ class Player
 		this.direction =0;
 		this.playerWidth = 150;
 		this.playerheight = 250; 
+
+
+		this.groundSprite = new Image();
+		this.groundX = 0;
+		this.groundY = app.canvas.height - 40;
+
 	}
 	//Function to draw the 2 sprites
 	Draw()
@@ -41,6 +47,8 @@ class Player
 			app.ctx.drawImage(this.secondSprite,this.leftAnimation,this.direction,this.width/6,this.height/2,this.x1,this.y1,this.playerWidth,this.playerheight);
 
 		}
+		this.groundSprite.src = 'ground.png';
+		app.ctx.drawImage(this.groundSprite,this.groundX,this.groundY,this.width,60);
 
 
 	}
