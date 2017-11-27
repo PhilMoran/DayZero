@@ -19,6 +19,7 @@ function main()
 	app.mainmenu = new MainMenu();
 	app.gameOver = new GameOver();
 	app.player = new Player();
+	app.lives = new Lives();
 	app.scenemanager.currentScene();
 
 }

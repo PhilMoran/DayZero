@@ -13,7 +13,7 @@ class SceneManager
 		app.soundOptions = new SoundOptions();
 		app.gameOptions = new GameOptions();
 		app.player = new Player();
-
+		app.lives = new Lives();
 		
 		if(this.scene ==0)	// main menu
 		{ 
