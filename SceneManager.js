@@ -31,7 +31,7 @@ class SceneManager
 		if(this.scene == 3)	// game
 		{
 			//Initializing the game
-			app.game.Init();
+			app.game.Init();;
 			app.game.Update();
 		}
 		if(this.scene == 4)	// lose scene

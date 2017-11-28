@@ -14,7 +14,6 @@ class Game
 		if(app.scenemanager.scene ==0)	// main menu
 		{
 			app.mainmenu.Draw();
-			app.lives.Draw();
 		}
 		if(app.scenemanager.scene ==1)	// game options
 		{

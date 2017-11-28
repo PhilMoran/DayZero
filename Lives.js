@@ -4,20 +4,31 @@ class Lives
 	{
 		this.liveNum = 3;
 		this.sprite = new Image();
+		this.sprite.src = 'lifeSprite.png';
 		this.x = 60;
 		this.y = 40;
-		this.width = 20;
-		this.height = 20;
+		this.width = 30;
+		this.height = 30;
 		this.life = 0;
 	}
 
 	Draw()
 	{
-		for(this.life = 0; this.life <= this.liveNum; this.life = this.life + 1)
+		for(this.life === 0; this.life < this.liveNum; this.life = this.life + 1)
 		{
-			this.sprite.src = 'lifeSprite.png';
 			app.ctx.drawImage(this.sprite,this.x,this.y,this.width, this.height);
 			this.x += 60;
+		}
+	}
+	UpdateLives()
+	{
+		if(this.liveNum > 0)
+		{
+			this.liveNum = this.liveNum - 1;
+		}
+		else
+		{
+			app.scenemanager.scene = 4; // switch to game lose screen
 		}
 	}
 }
