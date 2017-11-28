@@ -69,5 +69,22 @@ if(app.scenemanager.scene == 1)	//game Options
 				}
 				
 			}
+		}	
+if(app.scenemanager.scene == 3)	//game 
+   		{
+			if(event.type == 'touchstart')
+			{	
+				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height &&event.touches[0].clientY <= app.mainmenu.height - app.mainmenu.height + 80 )
+				{
+					console.log("jump");
+					app.player.TouchUp();
+				}
+				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - 80 &&event.touches[0].clientY <= app.mainmenu.height)
+				{
+					console.log("crouch");
+					app.player.TouchDown();
+				}
+				
+			}
 		}	 
 }

@@ -49,6 +49,28 @@ class Player
 
 
 	}
+	TouchUp()	//called from touch class
+	{
+		if(this.y = app.canvas.height - 195)
+		{
+			this.Jump();
+		}
+	}
+	TouchDown()
+	{
+		if(this.y = app.canvas.height - 195)
+		{
+			this.Crouch();
+		}
+	}
+	Jump()
+	{
+		this.y -= 20;
+	}
+	Crouch()
+	{
+		// change sprite and height 
+	}
 	//Function to animate sprite
 	Animate(dt)
 	{
