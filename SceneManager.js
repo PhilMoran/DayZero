@@ -13,7 +13,7 @@ class SceneManager
 		app.soundOptions = new SoundOptions();
 		app.gameOptions = new GameOptions();
 		app.player = new Player();
-
+		app.lives = new Lives();
 		
 		if(this.scene ==0)	// main menu
 		{ 
@@ -31,7 +31,7 @@ class SceneManager
 		if(this.scene == 3)	// game
 		{
 			//Initializing the game
-			app.game.Init();
+			app.game.Init();;
 			app.game.Update();
 		}
 		if(this.scene == 4)	// lose scene

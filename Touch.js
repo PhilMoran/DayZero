@@ -8,7 +8,9 @@ function menuTapControls(event)
 			{
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -620 && event.touches[0].clientY <= app.mainmenu.height-620+60 )
 				{
+					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
 					app.scenemanager.scene = 3;
+
 				}
 					if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -460 && event.touches[0].clientY <= app.mainmenu.height-460+60 )
 				{
@@ -64,6 +66,23 @@ if(app.scenemanager.scene == 1)	//game Options
 				if(event.touches[0].clientX >= app.mainmenu.width - 130 && event.touches[0].clientX <= app.mainmenu.width - 130+100 &&event.touches[0].clientY >= app.mainmenu.height -180 &&event.touches[0].clientY <= app.mainmenu.height-180+40 )
 				{
 					app.scenemanager.scene = 0;
+				}
+				
+			}
+		}	
+if(app.scenemanager.scene == 3)	//game 
+   		{
+			if(event.type == 'touchstart')
+			{	
+				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height &&event.touches[0].clientY <= app.mainmenu.height - app.mainmenu.height + 80 )
+				{
+					console.log("jump");
+					app.player.TouchUp();
+				}
+				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - 80 &&event.touches[0].clientY <= app.mainmenu.height)
+				{
+					console.log("crouch");
+					app.player.TouchDown();
 				}
 				
 			}
