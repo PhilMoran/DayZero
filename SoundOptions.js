@@ -11,24 +11,37 @@ class SoundOptions
 
 		this.soundImg = new Image();
 		this.muteImg = new Image();
+		this.musicImg = new Image();
+		this.effectImg = new Image();
 
 		this.muteEffectText = new Text();
 		this.muteMusicText = new Text();
 		this.backText = new Text();
 		this.optionSound = new Text();
 	}
+
+	Init()
+	{
+		this.soundSprite.src = 'soundScreen.jpg';
+		this.buttonImg.src = 'button.png';
+		this.soundImg.src = 'soundSymbol.png';
+		this.muteImg.src = 'muteSymbol.png';
+
+		this.effectImg = this.soundImg;
+		this.musicImg = this.soundImg;
+
+		this.muteEffectText = 'Mute Sound Effects'
+		this.muteMusicText = 'Mute Music'
+		this.backText = 'Back'
+		this.optionSound = 'Sound Options'
+	}
+
 	Draw()
 	{
-			//Drawing image 1
-			this.soundSprite.src = 'soundScreen.jpg';
-			this.buttonImg.src = 'button.png';
-			this.soundImg.src = 'soundSymbol.png';
-			this.muteImg.src = 'muteSymbol.png';
-
 			app.ctx.drawImage(this.soundSprite,this.x,this.y,this.width,this.height);
 
-			app.ctx.drawImage(this.soundImg,400,this.height/4, 40, 40);
-			app.ctx.drawImage(this.muteImg,400,this.height/2, 40, 40);
+			app.ctx.drawImage(this.effectImg,400,this.height/4, 40, 40);
+			app.ctx.drawImage(this.musicImg,400,this.height/2, 40, 40);
 
 			app.ctx.drawImage(this.buttonImg,100,this.height/4, 260, 40);
 			app.ctx.drawImage(this.buttonImg,100 ,this.height/2, 260, 40);
@@ -38,19 +51,48 @@ class SoundOptions
 			app.ctx.font = "18px NONSTOP";
 			app.ctx.fillStyle = "red";
 
-			this.muteEffectText = 'Mute Sound Effects'
-			this.muteMusicText = 'Mute Music'
-			this.backText = 'Back'
-			this.optionSound = 'Sound Options'
-
 			app.ctx.fillText(this.muteEffectText,105, this.height/4 + 25);
 			app.ctx.fillText(this.muteMusicText,105,this.height/2 + 25);
 			app.ctx.fillText(this.backText,this.width - 110 ,this.height - 155);
 			app.ctx.fillText(this.optionSound,this.width/2 - 60 , 40);
+
 	}
 	UpdateEffects()
 	{
-		// when button touched swap soundImg
-
+		if(this.effectImg === this.soundImg)		/// only plays music if the sound options menu isnt muted
+		{
+			//var audio = new Audio('effects.wav');
+			//audio.play();
+		}
+	}
+	UpdateMusic()
+	{
+		if(this.musicImg === this.soundImg)		
+		{
+			var audio = new Audio('music.wav');
+			audio.play();
+		}
+	}
+	UpdateMusicImg()
+	{
+		if(this.musicImg === this.soundImg)
+		{
+			this.musicImg = this.muteImg;
+		}
+		else 
+		{
+			this.musicImg = this.soundImg;
+		}
+	}
+	UpdateEffectImg()
+	{
+		if(this.effectImg === this.soundImg)
+		{
+			this.effectImg = this.muteImg;
+		}
+		else 
+		{
+			this.effectImg = this.soundImg;
+		}
 	}
 }

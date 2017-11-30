@@ -14,6 +14,9 @@ class SceneManager
 		app.gameOptions = new GameOptions();
 		app.player = new Player();
 		app.lives = new Lives();
+
+		app.soundOptions.Init();
+		app.player.Init();
 		
 		if(this.scene ==0)	// main menu
 		{ 

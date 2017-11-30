@@ -16,7 +16,8 @@ class GameOptions
 		this.optionGame = new Text();
 
 		this.liveNum = new Text();
-		this.diff = new Text();
+		this.sprite = new Image();
+
 	}
 	Draw()
 	{
@@ -42,31 +43,51 @@ class GameOptions
 			app.ctx.font = "18px NONSTOP";
 			app.ctx.fillStyle = "red";
 
-			this.difficultyText = 'Game Difficulty'
+			this.difficultyText = 'Sprite'
 			this.livesText = 'Player lives'
 			this.backText = 'Back'
 			this.optionGame = 'Game Options'
 
-			this.liveNum = '3'		//placeholders
-			this.diff = 'Normal'
+			this.liveNum = "" + app.lives.liveNum;	//placeholders
+			this.sprite.src = "sprite.png"
 
 			app.ctx.fillText(this.difficultyText,105, this.height/4 + 25);
 			app.ctx.fillText(this.livesText,105,this.height/2 + 25);
 			app.ctx.fillText(this.backText,this.width - 110 ,this.height - 155);
 
-			app.ctx.fillText(this.diff,this.width/2 - 30,this.height/4 + 25);
+			app.ctx.drawImage(this.sprite,this.width/2 - 20,this.height/4 - 10, 60, 60);
+
 			app.ctx.fillText(this.liveNum,this.width/2,this.height/2 + 15);
 
 			app.ctx.fillText(this.optionGame,this.width/2 - 80 , 40);	//title
 	}
-	UpdateDifficulty()
+	
+	IncreaseLives()
 	{
-		// when button touched swap change options
+		if(app.lives.liveNum < 8)
+		{
+			app.lives.liveNum = app.lives.liveNum + 1;
+		}
 
 	}
-	UpdateLives()
+	ChangeSprite()
 	{
-		// when button touched swap change options
+		if(app.player.sprite === app.player.playerSprite.src)
+		{
+			app.player.sprite = app.player.playerSpriteTwo.src;
+		}
+		else
+		{
+			app.player.sprite = app.player.playerSprite.src;
+		}
+
+	}
+	DecreaseLives()
+	{
+		if(app.lives.liveNum > 2)
+		{
+			app.lives.liveNum = app.lives.liveNum - 1;
+		}
 
 	}
 }
