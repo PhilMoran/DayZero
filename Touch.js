@@ -8,7 +8,10 @@ function menuTapControls(event)
 			{
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -620 && event.touches[0].clientY <= app.mainmenu.height-620+60 )
 				{
+					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
+					app.soundOptions.UpdateMusic();
 					app.scenemanager.scene = 3;
+
 				}
 					if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -460 && event.touches[0].clientY <= app.mainmenu.height-460+60 )
 				{
@@ -47,13 +50,14 @@ if(app.scenemanager.scene == 2)	//sound Options
 				{
 					app.scenemanager.scene = 0;
 				}
-					if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+260 &&event.touches[0].clientY >= app.mainmenu.height/4 && event.touches[0].clientY <= app.mainmenu.height/4+40 )
+				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+260 &&event.touches[0].clientY >= app.mainmenu.height/4 && event.touches[0].clientY <= app.mainmenu.height/4+40 )
 				{
 					//Mute Effects
+					app.soundOptions.UpdateEffectImg();
 				}
-					if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+260 &&event.touches[0].clientY >= app.mainmenu.height/2 && event.touches[0].clientY <= app.mainmenu.height/2+40 )
+				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+260 &&event.touches[0].clientY >= app.mainmenu.height/2 && event.touches[0].clientY <= app.mainmenu.height/2+40 )
 				{
-					//Mute Music
+					app.soundOptions.UpdateMusicImg();
 				}
 			}
 		}	 
@@ -64,6 +68,36 @@ if(app.scenemanager.scene == 1)	//game Options
 				if(event.touches[0].clientX >= app.mainmenu.width - 130 && event.touches[0].clientX <= app.mainmenu.width - 130+100 &&event.touches[0].clientY >= app.mainmenu.height -180 &&event.touches[0].clientY <= app.mainmenu.height-180+40 )
 				{
 					app.scenemanager.scene = 0;
+				}
+				if(event.touches[0].clientX >= app.gameOptions.width/2 - 100 && event.touches[0].clientX <= app.gameOptions.width/2 - 80 &&event.touches[0].clientY >= app.gameOptions.height/2 -20 &&event.touches[0].clientY <= app.gameOptions.height/2 +20 )
+				{
+					app.gameOptions.DecreaseLives();
+				}
+				if(event.touches[0].clientX >= app.gameOptions.width/2 + 100 && event.touches[0].clientX <= app.gameOptions.width/2 + 120 &&event.touches[0].clientY >= app.gameOptions.height/2 -20 &&event.touches[0].clientY <= app.gameOptions.height/2 +20 )
+				{
+					app.gameOptions.IncreaseLives();
+				}
+				
+			}
+		}	
+if(app.scenemanager.scene == 3)	//game 
+   		{
+			if(event.type == 'touchstart')
+			{	
+				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height &&event.touches[0].clientY <= app.mainmenu.height - app.mainmenu.height + 80 )
+				{
+					console.log("jump");
+					app.player.TouchUp();
+				}
+				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - 80 &&event.touches[0].clientY <= app.mainmenu.height)
+				{
+					console.log("crouch");
+					app.player.TouchDown();
+				}
+				if(event.touches[0].clientX >= app.mainmenu.width - 80  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height + 160 &&event.touches[0].clientY <= app.mainmenu.height - 160)
+				{
+					console.log("shoot");
+					app.player.TouchDown();
 				}
 				
 			}

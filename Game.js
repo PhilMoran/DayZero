@@ -14,7 +14,6 @@ class Game
 		if(app.scenemanager.scene ==0)	// main menu
 		{
 			app.mainmenu.Draw();
-			
 		}
 		if(app.scenemanager.scene ==1)	// game options
 		{
@@ -27,6 +26,7 @@ class Game
 		if(app.scenemanager.scene ==3)	// game 
 		{
  			app.player.Draw();
+ 			app.lives.Draw();
  			//animating the player
  			app.player.Animate(deltaTime);
  		}
