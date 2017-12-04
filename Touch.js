@@ -91,7 +91,7 @@ if(app.scenemanager.scene == 3)	//game
 				}
 				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - 80 &&event.touches[0].clientY <= app.mainmenu.height)
 				{
-					console.log("crouch");
+					console.log(app.player.crouched);
 					app.player.TouchDown();
 				}
 				if(event.touches[0].clientX >= app.mainmenu.width - 80  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height + 160 &&event.touches[0].clientY <= app.mainmenu.height - 160)
