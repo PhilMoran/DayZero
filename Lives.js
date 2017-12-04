@@ -24,6 +24,7 @@ class Lives
 	{
 		if(this.liveNum > 0)
 		{
+			//clear the rectangle
 			this.liveNum = this.liveNum - 1;
 		}
 		else

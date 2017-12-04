@@ -34,6 +34,7 @@ class Game
 		{
  			app.gameOver.Draw();
  			app.gameOver.Update();
+ 			//reset lives and score
  		}
  		if(app.scenemanager.scene ==5)	// win screen
 		{

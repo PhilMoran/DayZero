@@ -57,14 +57,43 @@ class SoundOptions
 			app.ctx.fillText(this.optionSound,this.width/2 - 60 , 40);
 
 	}
-	UpdateEffects()
+	// if soundOptions is not muted play sounds
+	UpdateButton()
 	{
-		if(this.effectImg === this.soundImg)		/// only plays music if the sound options menu isnt muted
+		if(this.effectImg === this.soundImg)		
 		{
-			//var audio = new Audio('effects.wav');
-			//audio.play();
+			var audio = new Audio('click.wav');
+			audio.play();
 		}
 	}
+
+	Throw()
+	{
+		if(this.effectImg === this.soundImg)		
+		{
+			var audio = new Audio('throw.wav');
+			audio.play();
+		}
+	}
+
+	Jump()
+	{
+		if(this.effectImg === this.soundImg)		
+		{
+			var audio = new Audio('jump.wav');
+			audio.play();
+		}
+	}
+
+	Crouch()
+	{
+		if(this.effectImg === this.soundImg)		
+		{
+			var audio = new Audio('crouch.wav');
+			audio.play();
+		}
+	}
+
 	UpdateMusic()
 	{
 		if(this.musicImg === this.soundImg)		
@@ -73,6 +102,7 @@ class SoundOptions
 			audio.play();
 		}
 	}
+
 	UpdateMusicImg()
 	{
 		if(this.musicImg === this.soundImg)
@@ -84,6 +114,7 @@ class SoundOptions
 			this.musicImg = this.soundImg;
 		}
 	}
+
 	UpdateEffectImg()
 	{
 		if(this.effectImg === this.soundImg)

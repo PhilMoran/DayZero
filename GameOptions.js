@@ -17,7 +17,13 @@ class GameOptions
 
 		this.liveNum = new Text();
 		this.sprite = new Image();
+		this.spriteImgTwo = new Image();
+		this.spriteImgOne = new Image();
 
+		this.spriteImgOne.src = "sprite.png"
+		this.spriteImgTwo.src = "spriteTwo.png" 
+
+		this.sprite = this.spriteImgTwo;
 	}
 	Draw()
 	{
@@ -25,10 +31,10 @@ class GameOptions
 			this.gameOptSprite.src = 'soundScreen.jpg';
 			this.buttonImg.src = 'button.png';
 
-
+			//this.sprite = this.spriteImgOne;
 			app.ctx.drawImage(this.gameOptSprite,this.x,this.y,this.width,this.height);
 
-			app.ctx.drawImage(this.buttonImg,this.width/2 - 100,this.height/4 + 10, 20, 20); //Difficulty buttons
+			app.ctx.drawImage(this.buttonImg,this.width/2 - 100,this.height/4 + 10, 20, 20); //sprite buttons
 			app.ctx.drawImage(this.buttonImg,this.width/2 + 100,this.height/4 + 10, 20, 20);
 
 
@@ -49,7 +55,6 @@ class GameOptions
 			this.optionGame = 'Game Options'
 
 			this.liveNum = "" + app.lives.liveNum;	//placeholders
-			this.sprite.src = "sprite.png"
 
 			app.ctx.fillText(this.difficultyText,105, this.height/4 + 25);
 			app.ctx.fillText(this.livesText,105,this.height/2 + 25);
@@ -72,14 +77,22 @@ class GameOptions
 	}
 	ChangeSprite()
 	{
-		if(app.player.sprite === app.player.playerSprite.src)
+		app.ctx.clearRect(this.width/2 - 20, this.height/4 - 10, 60, 60);
+		if(this.sprite === this.spriteImgOne)
 		{
-			app.player.sprite = app.player.playerSpriteTwo.src;
+			console.log(1);
+			app.player.sprite.src = app.player.playerSpriteTwo.src;
+			app.player.sprite = app.player.playerSpriteTwo;
+			this.sprite = this.spriteImgTwo;
 		}
-		else
+		else if(this.sprite === this.spriteImgTwo)
 		{
-			app.player.sprite = app.player.playerSprite.src;
+			console.log(2);
+			app.player.sprite.src = app.player.playerSprite.src;
+			app.player.sprite = app.player.playerSprite;
+			this.sprite = this.spriteImgOne;
 		}
+		app.ctx.drawImage(this.sprite,this.width/2 - 20,this.height/4 - 10, 60, 60);
 
 	}
 	DecreaseLives()

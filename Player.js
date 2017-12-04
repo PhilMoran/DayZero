@@ -38,7 +38,7 @@ class Player
 		this.playerSprite.src = 'SpriteSheet.png';
 		this.playerSpriteTwo.src = 'SpriteSheet1.png';
 
-		this.sprite = this.playerSprite;
+		this.sprite = this.playerSpriteTwo;
 
 		this.groundSprite.src = 'ground.png';
 		this.groundSprite2.src = 'ground.png';
