@@ -28,8 +28,9 @@ class Player
 		this.groundSprite = new Image();
 		this.groundSprite2 = new Image();
 		this.groundX = 0;
-		this.groundX2 = app.canvas.width - 10;
+		this.groundX2 = this.width;
 		this.groundY = app.canvas.height - 40;
+		this.crouched = false;
 
 	}
 	Init()
@@ -55,9 +56,16 @@ class Player
 			app.ctx.drawImage(this.sprite,this.rightAnimation,this.direction,this.width/6,this.height/2,this.x,this.y,this.playerWidth,this.playerheight);
 		}
 		app.ctx.drawImage(this.groundSprite,this.groundX--,this.groundY,this.width,60);
-		app.ctx.drawImage(this.groundSprite2,this.groundX2,this.groundY,this.width,60);
+		app.ctx.drawImage(this.groundSprite2,this.groundX2--,this.groundY,this.width,60);
 
-
+		if(this.groundX+this.width<0)
+		{
+			this.groundX = this.width;
+		}
+		if(this.groundX2+this.width<0)
+		{
+			this.groundX2 =  this.width;
+		}
 	}
 	TouchUp()	//called from touch class
 	{
@@ -91,6 +99,18 @@ class Player
 	Crouch()
 	{
 		// change sprite and height 
+		if(this.crouched === true)
+		{
+			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
+			this.playerheight = this.playerheight / 2;
+			this.y = this.y +this.playerheight/1.1;
+		}
+		if(this.crouched === false)
+		{
+			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
+			this.playerheight = 180;
+			this.y = app.canvas.height - 195;
+		}
 	}
 
 
