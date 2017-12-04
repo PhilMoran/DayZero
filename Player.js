@@ -99,6 +99,18 @@ class Player
 	Crouch()
 	{
 		// change sprite and height 
+		if(this.crouched === true)
+		{
+			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
+			this.playerheight = this.playerheight / 2;
+			this.y = this.y +this.playerheight/1.1;
+		}
+		if(this.crouched === false)
+		{
+			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
+			this.playerheight = 180;
+			this.y = app.canvas.height - 195;
+		}
 	}
 
 
