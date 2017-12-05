@@ -81,19 +81,16 @@ class GameOptions
 		if(this.sprite === this.spriteImgOne)
 		{
 			console.log(1);
-			app.player.sprite.src = app.player.playerSpriteTwo.src;
 			app.player.sprite = app.player.playerSpriteTwo;
 			this.sprite = this.spriteImgTwo;
 		}
 		else if(this.sprite === this.spriteImgTwo)
 		{
 			console.log(2);
-			app.player.sprite.src = app.player.playerSprite.src;
 			app.player.sprite = app.player.playerSprite;
 			this.sprite = this.spriteImgOne;
 		}
 		app.ctx.drawImage(this.sprite,this.width/2 - 20,this.height/4 - 10, 60, 60);
-
 	}
 	DecreaseLives()
 	{
