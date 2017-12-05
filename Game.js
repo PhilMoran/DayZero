@@ -25,8 +25,8 @@ class Game
  		}
 		if(app.scenemanager.scene ==3)	// game 
 		{
+			app.scroll.Draw();
  			app.player.Draw();
- 			app.lives.Draw();
  			//animating the player
  			app.player.Animate(deltaTime);
  		}

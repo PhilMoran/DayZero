@@ -48,7 +48,6 @@ class Player
 	//Function to draw the 2 sprites
 	Draw()
 	{
-		//app.scroll.Draw();
 		if(this.alive === true)
 		{
 			//Clear the screen to be redrawn
