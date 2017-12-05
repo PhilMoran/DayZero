@@ -14,7 +14,7 @@ class SceneManager
 		app.gameOptions = new GameOptions();
 		app.player = new Player();
 		app.lives = new Lives();
-
+		
 		app.soundOptions.Init();
 		
 		//app.obstacles.Init();

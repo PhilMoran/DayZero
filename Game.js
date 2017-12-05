@@ -31,11 +31,12 @@ class Game
 		if(app.scenemanager.scene ==3)	// game 
 		{
 			app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height );
+			app.scroll.Draw();
 			app.obstacles.Draw();
  			app.player.Draw();
  			app.lives.Draw();
  			//console.log(app.player.sprite);
- 			
+ 		
  			
  			//animating the player
  			app.player.Animate(deltaTime);

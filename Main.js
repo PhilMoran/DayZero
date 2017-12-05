@@ -21,6 +21,8 @@ function main()
 	app.player = new Player();
 	app.lives = new Lives();
 	app.obstacles = new Obstacles();
+	app.scroll = new ScrollBackground();
+	
 	app.scenemanager.currentScene();
 	app.player.Init();
 	app.obstacles.Init();

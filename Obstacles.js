@@ -43,7 +43,6 @@ class Obstacles
 	//Function to draw the 2 sprites
 	Draw()
 	{			
-				app.ctx.clearRect(this.x,this.y - this.boxHeight,this.boxWidth,this.boxHeight);
 				this.x -=5;
 				if(this.x <= 0 - this.deskWidth)
 				{

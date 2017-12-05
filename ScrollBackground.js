@@ -5,7 +5,7 @@ class ScrollBackground
 		this.x = 0;
 		this.y = 0;
 		this.width = app.canvas.width;
-		this.height = app.canvas.height/1.2;
+		this.height = app.canvas.height;
 		this.x2 = this.width;
 
 		this.current = new Image();
@@ -22,17 +22,18 @@ class ScrollBackground
 		this.stairs.src = "stairs.png";
 
 		this.current = this.door;
+		this.next = this.window;
 	}
 
 	Draw()
 	{
-		app.ctx.clearRect(this.x, this.y, this.width, this.height);
 		app.ctx.drawImage(this.current,this.x--,this.y,this.width,this.height);
 		app.ctx.drawImage(this.next,this.x2--,this.y,this.width,this.height);
 		this.UpdateScroll();
 	}
 	UpdateScroll()
 	{
+		console.log(this.x);
 		if(this.x + this.width < 0)
 		{
 			this.PickCurrent();
