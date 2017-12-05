@@ -13,6 +13,7 @@ class Player
 		this.fps2 =0;
 		this.delay = 0;
 
+		this.playerTexture = 0;
 		this.playerSprite = new Image();
 		this.playerSpriteTwo = new Image();
 		this.sprite = new Image();
@@ -40,18 +41,31 @@ class Player
 		this.playerSpriteTwo.src = 'SpriteSheet1.png';
 
 		this.sprite = this.playerSpriteTwo;
-
 		this.groundSprite.src = 'ground.png';
 		this.groundSprite2.src = 'ground.png';
 	}
-
+	LoadTexture()
+	{
+		if(this.playerTexture === 0)
+		{
+			this.sprite = this.playerSpriteTwo;
+		}
+		if(this.playerTexture === 1)
+		{
+			this.sprite = this.playerSprite;
+		}
+		if(this.playerTexture === 2)
+		{
+			this.sprite = this.playerSpriteTwo;
+		}
+	}
 	//Function to draw the 2 sprites
 	Draw()
 	{
 		if(this.alive === true)
 		{
 			//Clear the screen to be redrawn
-			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
+			//app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
 			//Drawing image 1
 			app.ctx.drawImage(this.sprite,this.rightAnimation,this.direction,this.width/6,this.height/2,this.x,this.y,this.playerWidth,this.playerheight);
 		}
@@ -101,13 +115,12 @@ class Player
 		// change sprite and height 
 		if(this.crouched === true)
 		{
-			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
 			this.playerheight = this.playerheight / 2;
 			this.y = this.y +this.playerheight/1.1;
 		}
 		if(this.crouched === false)
 		{
-			app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
+
 			this.playerheight = 180;
 			this.y = app.canvas.height - 195;
 		}
@@ -124,6 +137,7 @@ class Player
 	//Function to animate sprite
 	Animate(dt)
 	{
+
 		//Controls speed of animation
 		this.fps += 8;
     	if (this.fps >= this.ticksPerFrame/dt) {
@@ -137,6 +151,7 @@ class Player
 		{
 			this.rightAnimation =0;
 		}
+
 	}
 	
 };

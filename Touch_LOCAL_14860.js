@@ -101,8 +101,6 @@ if(app.scenemanager.scene == 1)	//game Options
 		}	
 if(app.scenemanager.scene == 3)	//game 
    		{
-   			
-   			
 			if(event.type == 'touchstart')
 			{	
 				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height &&event.touches[0].clientY <= app.mainmenu.height - app.mainmenu.height + 80 )
@@ -113,15 +111,10 @@ if(app.scenemanager.scene == 3)	//game
 				}
 				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - 80 &&event.touches[0].clientY <= app.mainmenu.height)
 				{
-					
+					console.log("crouch");
 					app.soundOptions.Crouch();
-					app.player.crouched = true;
-					app.player.Crouch();
-					///app.player.TouchDown();
-					console.log("CrouchState = " + app.player.crouched);
-					
+					app.player.TouchDown();
 				}
-				
 				if(event.touches[0].clientX >= app.mainmenu.width - 80  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height + 160 &&event.touches[0].clientY <= app.mainmenu.height - 160)
 				{
 					console.log("shoot");
@@ -130,12 +123,5 @@ if(app.scenemanager.scene == 3)	//game
 				}
 				
 			}
-			if(event.type == 'touchend'&& app.player.crouched === true)
-				{
-					app.player.crouched = false;
-					app.player.Crouch();
-					console.log("CrouchState = " + app.player.crouched);
-				}
-
 		}	 
 }

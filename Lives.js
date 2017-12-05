@@ -16,10 +16,9 @@ class Lives
 	{
 		for(this.life === 0; this.life < this.liveNum; this.life = this.life + 1)
 		{
+			app.ctx.drawImage(this.sprite,this.x,this.y,this.width, this.height);
 			this.x += 60;
 		}
-		//if(this.life >)
-		app.ctx.drawImage(this.sprite,this.x,this.y,this.width, this.height);
 	}
 	UpdateLives()
 	{

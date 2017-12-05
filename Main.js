@@ -16,12 +16,14 @@ function main()
 	document.addEventListener("touchstart", menuTapControls, false);
 	app.scenemanager = new SceneManager();
 	app.game = new Game();
-	app.scroll = new ScrollBackground();
 	app.mainmenu = new MainMenu();
 	app.gameOver = new GameOver();
 	app.player = new Player();
 	app.lives = new Lives();
+	app.obstacles = new Obstacles();
 	app.scenemanager.currentScene();
+	app.player.Init();
+	app.obstacles.Init();
 
 }
 
