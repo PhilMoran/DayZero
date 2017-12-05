@@ -3,6 +3,11 @@ class Game
  	Init()
  	{
  		console.log("Initialising game");
+ 		if(app.scenemanager.scene ==3)	// game 
+		{
+ 			app.player.LoadTexture();
+
+ 		}
  	}
  	Update()
  	{
@@ -25,8 +30,13 @@ class Game
  		}
 		if(app.scenemanager.scene ==3)	// game 
 		{
-			app.scroll.Draw();
+			app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height );
+			app.obstacles.Draw();
  			app.player.Draw();
+ 			app.lives.Draw();
+ 			//console.log(app.player.sprite);
+ 			
+ 			
  			//animating the player
  			app.player.Animate(deltaTime);
  		}

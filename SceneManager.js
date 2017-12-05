@@ -16,7 +16,8 @@ class SceneManager
 		app.lives = new Lives();
 
 		app.soundOptions.Init();
-		app.player.Init();
+		
+		//app.obstacles.Init();
 		
 		if(this.scene ==0)	// main menu
 		{ 
@@ -33,6 +34,7 @@ class SceneManager
 		}
 		if(this.scene == 3)	// game
 		{
+			
 			//Initializing the game
 			app.game.Init();
 			app.game.Update();

@@ -61,7 +61,7 @@ class GameOptions
 			app.ctx.fillText(this.backText,this.width - 110 ,this.height - 155);
 
 			app.ctx.drawImage(this.sprite,this.width/2 - 20,this.height/4 - 10, 60, 60);
-
+			
 			app.ctx.fillText(this.liveNum,this.width/2,this.height/2 + 15);
 
 			app.ctx.fillText(this.optionGame,this.width/2 - 80 , 40);	//title
@@ -78,19 +78,23 @@ class GameOptions
 	ChangeSprite()
 	{
 		app.ctx.clearRect(this.width/2 - 20, this.height/4 - 10, 60, 60);
-		if(this.sprite === this.spriteImgOne)
+		if(this.sprite == this.spriteImgOne)
 		{
 			console.log(1);
 			app.player.sprite = app.player.playerSpriteTwo;
 			this.sprite = this.spriteImgTwo;
+			app.player.playerTexture = 1;
 		}
-		else if(this.sprite === this.spriteImgTwo)
+		else if(this.sprite == this.spriteImgTwo)
 		{
 			console.log(2);
+
 			app.player.sprite = app.player.playerSprite;
 			this.sprite = this.spriteImgOne;
+			app.player.playerTexture = 2;
 		}
-		app.ctx.drawImage(this.sprite,this.width/2 - 20,this.height/4 - 10, 60, 60);
+
+		
 	}
 	DecreaseLives()
 	{
