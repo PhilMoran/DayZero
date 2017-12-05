@@ -36,7 +36,7 @@ class Game
  			app.player.Draw();
  			app.lives.Draw();
  			//console.log(app.player.sprite);
- 		
+ 			app.obstacles.ObstacleCollision();
  			
  			//animating the player
  			app.player.Animate(deltaTime);

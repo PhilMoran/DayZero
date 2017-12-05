@@ -3,7 +3,7 @@ class Player
 	constructor()
 	{
  		this.x = 100;
-		this.y = app.canvas.height - 195;
+		this.y = app.canvas.height-195;
 		this.x1 = 500;
 		this.y1 = 200;
 		this.width = 1536;

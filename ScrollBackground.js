@@ -33,7 +33,7 @@ class ScrollBackground
 	}
 	UpdateScroll()
 	{
-		console.log(this.x);
+		
 		if(this.x + this.width < 0)
 		{
 			this.PickCurrent();

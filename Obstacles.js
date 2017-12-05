@@ -18,6 +18,11 @@ class Obstacles
  		this.deskWidth = 400;
  		this.randomObj = 0;
 
+ 		this.crouchObstacle = [];
+ 		this.tableHeight = 400;
+ 		this.tableWidth = 400;
+ 		this.randomObj = 0;
+
 	}
 	Init()
 	{
@@ -63,5 +68,13 @@ class Obstacles
 				app.ctx.drawImage(this.emptyDeskObstacle[0] ,this.x ,this.y - this.deskHeight,this.deskWidth,this.deskHeight);
 				}
 				
+	}
+	ObstacleCollision()
+	{
+		if(app.player.x > this.x + this.deskWidth && app.player.x + app.player.playerWidth  < this.x && app.player.y > this.y + this.deskHeight && app.player.y + app.player.playerheight < this.y)
+			{
+				app.lives.UpdateLives();
+				console.log("Lives = "+ app.lives.liveNum);
+			}
 	}
 };
