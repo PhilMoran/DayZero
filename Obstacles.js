@@ -75,7 +75,6 @@ class Obstacles
 		{
 			
 			app.lives.UpdateLives();
-			console.log("Lives ="+  app.lives.lifeNum);
 			this.x = -400;
 		}
 

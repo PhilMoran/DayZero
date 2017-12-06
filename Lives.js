@@ -2,27 +2,35 @@ class Lives
 {
 	constructor()
 	{
+		this.sprite = [];
+		this.posX = [];
 		this.liveNum = 3;
-		this.sprite = new Image();
-		this.sprite.src = 'lifeSprite.png';
 		this.x = 60;
 		this.y = 40;
 		this.width = 30;
 		this.height = 30;
 		this.life = 0;
 	}
-
+	Init()
+	{
+		for(this.i = 0; this.i < this.liveNum; this.i++)
+		{
+			this.sprite[this.i] = new Image();
+			this.sprite[this.i].src = 'lifeSprite.png';
+			this.posX[this.i] = this.i * this.x + 60;
+		}
+	}
 	Draw()
 	{
-		for(this.life === 0; this.life < this.liveNum; this.life = this.life + 1)
+		for(this.i = 0; this.i < this.liveNum; this.i++)
 		{
-			app.ctx.drawImage(this.sprite,this.x,this.y,this.width, this.height);
-			this.x += 60;
+			app.ctx.drawImage(this.sprite[this.i],this.posX[this.i],this.y,this.width, this.height);
+			//this.x += 60;
 		}
 	}
 	UpdateLives()
 	{
-		if(this.liveNum > 0)
+		if(this.liveNum > 1)
 		{
 			//clear the rectangle
 			this.liveNum = this.liveNum - 1;
@@ -30,6 +38,7 @@ class Lives
 		else
 		{
 			app.scenemanager.scene = 4; // switch to game lose screen
+			this.liveNum = 3;
 		}
 	}
 }
