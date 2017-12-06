@@ -19,6 +19,7 @@ function main()
 	app.mainmenu = new MainMenu();
 	app.gameOver = new GameOver();
 	app.player = new Player();
+	app.enemies = new Enemies();
 	app.lives = new Lives();
 	app.obstacles = new Obstacles();
 	app.scroll = new ScrollBackground();

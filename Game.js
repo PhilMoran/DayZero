@@ -34,6 +34,8 @@ class Game
 			app.scroll.Draw();
 			app.obstacles.Draw();
  			app.player.Draw();
+ 			app.enemies.Init()
+ 			app.enemies.Draw();
  			app.lives.Init();
  			app.lives.Draw();
  			//console.log(app.player.sprite);

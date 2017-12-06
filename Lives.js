@@ -25,7 +25,6 @@ class Lives
 		for(this.i = 0; this.i < this.liveNum; this.i++)
 		{
 			app.ctx.drawImage(this.sprite[this.i],this.posX[this.i],this.y,this.width, this.height);
-			//this.x += 60;
 		}
 	}
 	UpdateLives()
