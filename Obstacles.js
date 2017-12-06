@@ -4,7 +4,7 @@ class Obstacles
 	{
  		this.boxObstacle = [];
  		this.x = app.canvas.width 
- 		this.y = app.canvas.height;
+ 		this.y = app.canvas.height - 400;
  		this.boxWidth = 400;
  		this.boxHeight = 400;
 
@@ -52,29 +52,32 @@ class Obstacles
 				if(this.x <= 0 - this.deskWidth)
 				{
 					this.randomObj = Math.floor((Math.random() * 3));
-					console.log(this.randomObj);
+					//console.log(this.randomObj);
 					this.x = app.canvas.width + Math.floor((Math.random() * 1000));
 				}
 				if(this.randomObj === 0)
 				{
-				app.ctx.drawImage(this.boxObstacle[0] ,this.x ,this.y - this.boxHeight,this.boxWidth,this.boxHeight);
+				app.ctx.drawImage(this.boxObstacle[0] ,this.x ,this.y,this.boxWidth,this.boxHeight);
 				}
 				if(this.randomObj === 1)
 				{
-				app.ctx.drawImage(this.deskObstacle[0] ,this.x ,this.y - this.deskHeight,this.deskWidth,this.deskHeight);
+				app.ctx.drawImage(this.deskObstacle[0] ,this.x ,this.y,this.deskWidth,this.deskHeight);
 				}
 				if(this.randomObj === 2)
 				{
-				app.ctx.drawImage(this.emptyDeskObstacle[0] ,this.x ,this.y - this.deskHeight,this.deskWidth,this.deskHeight);
+				app.ctx.drawImage(this.emptyDeskObstacle[0] ,this.x ,this.y,this.deskWidth,this.deskHeight);
 				}
 				
 	}
 	ObstacleCollision()
 	{
-		if(app.player.x > this.x + this.deskWidth && app.player.x + app.player.playerWidth  < this.x && app.player.y > this.y + this.deskHeight && app.player.y + app.player.playerheight < this.y)
-			{
-				app.lives.UpdateLives();
-				console.log("Lives = "+ app.lives.liveNum);
-			}
+		if(app.player.x < this.x + this.deskWidth && app.player.x + app.player.playerWidth  > this.x && app.player.y > this.y - this.deskHeight && app.player.y - app.player.playerheight > this.y && app.player.crouched === false)
+		{
+			
+			app.lives.UpdateLives();
+			console.log("Lives ="+  app.lives.lifeNum);
+			this.x = -400;
+		}
+
 	}
 };

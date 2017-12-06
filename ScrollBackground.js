@@ -85,6 +85,6 @@ class ScrollBackground
 		 	this.current = this.stairs;
 		 }
 		 this.x = this.width;
-		 console.log(rand);
+		 //console.log(rand);
 	}
 }
