@@ -22,12 +22,16 @@ class Lives
 	}
 	Draw()
 	{
+		if(this.liveNum === 1)	// when score is implemented remove this and change level there
+		{
+			app.enemies.level = 2;	// drawn from game.js
+		}
 		for(this.i = 0; this.i < this.liveNum; this.i++)
 		{
 			app.ctx.drawImage(this.sprite[this.i],this.posX[this.i],this.y,this.width, this.height);
 		}
 	}
-	UpdateLives()
+	UpdateLives()		
 	{
 		if(this.liveNum > 1)
 		{

@@ -34,8 +34,12 @@ class Game
 			app.scroll.Draw();
 			app.obstacles.Draw();
  			app.player.Draw();
- 			app.enemies.Init()
- 			app.enemies.Draw();
+ 			if(app.enemies.level === 2)
+ 			{
+ 				app.enemies.Init();
+ 				app.enemies.Draw();
+ 				app.enemies.EnemyCollision();
+ 			}
  			app.lives.Init();
  			app.lives.Draw();
  			//console.log(app.player.sprite);
@@ -43,6 +47,7 @@ class Game
  			
  			//animating the player
  			app.player.Animate(deltaTime);
+ 			app.enemies.Animate(deltaTime);
  		}
  		if(app.scenemanager.scene ==4)	// lose sceen
 		{
