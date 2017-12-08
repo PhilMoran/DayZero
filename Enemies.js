@@ -58,7 +58,6 @@ class Enemies
         	this.fps = 0;
 			this.imgX -= 120;
 		}	
-
 		
 		//Reset the frame locations.
 		if(this.imgX === 0)
@@ -76,9 +75,8 @@ class Enemies
 
 	EnemyCollision()
 	{
-		if(app.player.x < this.enemyX + this.imgWidth && app.player.x + app.player.playerWidth  > this.enemyX && app.player.y > this.y - this.imgHeight && app.player.y - app.player.playerheight > this.y && app.player.crouched === false)
+		if(app.player.x < this.enemyX + this.imgWidth && app.player.x + app.player.playerWidth  > this.enemyX && app.player.y < this.y + this.imgHeight && app.player.y + app.player.playerheight > this.y && app.player.crouched === false)
 		{
-			
 			app.lives.UpdateLives();
 			this.enemyX = -400;
 		}
