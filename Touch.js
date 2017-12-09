@@ -124,7 +124,8 @@ if(app.scenemanager.scene == 3)	//game
 				
 				if(event.touches[0].clientX >= app.mainmenu.width - 80  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height + 160 &&event.touches[0].clientY <= app.mainmenu.height - 160)
 				{
-					console.log("shoot");
+					app.projectile.bulletNum++;
+					app.projectile.alive[app.projectile.bulletNum] = true;
 					app.soundOptions.Throw();
 					app.player.TouchDown();
 				}

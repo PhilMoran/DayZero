@@ -23,9 +23,11 @@ function main()
 	app.lives = new Lives();
 	app.obstacles = new Obstacles();
 	app.scroll = new ScrollBackground();
+	app.projectile = new Projectiles();
 	
 	app.scenemanager.currentScene();
 	app.player.Init();
+	app.projectile.Init();
 	app.obstacles.Init();
 
 }
