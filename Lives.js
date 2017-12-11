@@ -22,7 +22,7 @@ class Lives
 	}
 	Draw()
 	{
-		if(this.liveNum === 1)	// when score is implemented remove this and change level there
+		if(this.liveNum === 3)	// when score is implemented remove this and change level there
 		{
 			app.enemies.level = 2;	// drawn from game.js
 		}

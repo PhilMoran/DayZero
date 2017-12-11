@@ -59,6 +59,7 @@ class Enemies
  		}
  		if(this.fall === true)
  		{
+ 			app.particles.update();
 			for(this.i = 0; this.i < this.enemyNum; this.i++)
   			{
  				app.ctx.drawImage(this.knock,this.fallX, this.imgY, this.fallWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
@@ -68,7 +69,7 @@ class Enemies
  					this.fallX = 130;
  					console.log("STEP");
  				}
- 				if(this.step > 30)
+ 				if(this.step > 50)
  				{
  					this.UpdatePosition();
  				}
@@ -86,6 +87,7 @@ class Enemies
  		this.alive = true;
  		this.fall = false;
  		this.step = 0;
+ 		app.particles.reset();
  		//this.Draw();
  	}
  

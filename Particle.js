@@ -4,10 +4,10 @@ class Particle {
     this.damping = 0.777;
     this.gravity = 0.98;
     this.drops = [];
-    this.x = 500;
-    this.y = app.canvas.height - app.enemies.height;
-    this.oldX = 500;
-    this.oldY = app.canvas.height - app.enemies.height;
+    this.x = app.enemies.enemyX + app.enemies.width/9;
+    this.y = app.canvas.height - app.enemies.height/1.1;
+    this.oldX = app.enemies.enemyX + app.enemies.width/9;
+    this.oldY = app.canvas.height - app.enemies.height/1.1;
   }
   Init() {
     var velocity = this.getVelocity();
@@ -28,7 +28,7 @@ class Particle {
     this.y += y;
   }
   bounce() {
-    if (this.y > app.canvas.height-100) {
+    if (this.y > app.canvas.height) {
       var velocity = this.getVelocity();
       this.oldY = app.canvas.height-10;
       this.y = this.oldY - velocity.y * 2;
@@ -52,7 +52,7 @@ class Particle {
         var drop = new Particle(app.canvas.width*0.5, app.canvas.height);
 
         // up and a little to the left or right
-        drop.move(Math.random() * 30 -15, Math.random() * -2 - 15);
+        drop.move(Math.random() * 20 -15, Math.random() * -2 - 15);
         this.drops.push(drop);
       }
     }
@@ -63,5 +63,9 @@ class Particle {
       this.drops[i].draw();           // check y against the ground
     }
 
-}
+  }
+  reset()
+  {
+    this.drops = [];
+  }
 };
