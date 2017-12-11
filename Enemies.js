@@ -3,20 +3,26 @@ class Enemies
 	constructor()
 	{
 		this.img = [];
+		this.knock = new Image();
+		this.knock.src = "KnockedDown.png";
+		this.fall = false;
+		this.fallX = 0;
+		this.fallWidth = 260;
 		this.speed = [];
-		this.enemyNum = 20;
+		this.enemyNum = 1 ;
 
 		this.enemyX = app.canvas.width + 40;	// need an array of xPositions
 		this.y = app.canvas.height - 155;
-		this.width = 720;
+		this.width = 600;
 		this.height = 120;
 
+		this.ticksPerFrame = 1000;
 		this.imgX = 720;
 		this.imgY = 0;
 		this.imgWidth = 120;
 		this.imgHeight = 120;
 		this.count = 0;
-
+		this.fps = 0;
 		this.speed = 3;
 		this.level = 1;
 
@@ -40,37 +46,56 @@ class Enemies
 			var rand = Math.floor((Math.random() * 400) + 1);
 			this.enemyX =  app.canvas.width + 100 + rand;
 		}
-
-		for(this.i = 0; this.i < this.enemyNum; this.i++)
+		if(this.fall === false)
 		{
-			app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
-			console.log(this.enemyX);
+			for(this.i = 0; this.i < this.enemyNum; this.i++)
+			{
+				app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+			}
+			this.enemyX = this.enemyX - this.speed;
 		}
-		this.enemyX = this.enemyX - this.speed;
+		if(this.fall === true)
+		{
+			app.ctx.drawImage(this.knock,this.fallX, this.imgY, this.fallWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+			var step = 0;
+			step++;
+			if(step > 30)
+			{
+				this.fallX += 130;
+				step = 0;
+			}
+			if(this.fallX >= this.fallWidth)
+			{
+				this.fallX = 0;
+				this.fall = false;
+				this.UpdatePosition();
+				this.Draw();
+			}
+		}
 		this.EnemyCollision();
 	}
 
-	Animate(dt)
+	UpdatePosition()
 	{
-		//Controls speed of animation
+		this.enemyX = - 400;
+		app.score.UpScore();
+		this.Draw();
+	}
+
+	Animate(dt)
+	{		
 		this.fps += 8;
     	if (this.fps >= this.ticksPerFrame/dt) {			// this isnt working here thats why count is used under
         	this.fps = 0;
 			this.imgX -= 120;
+			console.log(this.imgX);
 		}	
-		
+		console.log(this.fps);
 		//Reset the frame locations.
-		if(this.imgX === 0)
+		if(this.imgX <= 0)
 		{
-			this.imgX =720;
+			this.imgX =600;
 		}
-		
-		if(this.count > 10)
-		{
-			this.imgX -= 120;
-			this.count = 0;
-		}
-		this.count++;
 	}
 
 	EnemyCollision()
