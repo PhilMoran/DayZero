@@ -44,6 +44,7 @@ class Game
  			}
  			app.lives.Init();
  			app.lives.Draw();
+ 			app.score.Draw();
  			//console.log(app.player.sprite);
  			app.obstacles.ObstacleCollision();
  			app.projectile.BulletCollision();

@@ -63,6 +63,8 @@ class Projectiles
 		{
 			app.particles.update();
 			this.alive[this.bulletNum] = false;
+			//app.enemies.UpdatePosition();
+ 			app.enemies.fall = true;
 			console.log("Collision");
 			//Particle and Enemy dies code;
 		}

@@ -6,6 +6,12 @@ class Enemies
 		this.speed = [];
 		this.enemyNum = 1 ;
 
+		this.knock = new Image();
+ 		this.knock.src = "KnockedDown.png";
+ 		this.fall = false;
+ 		this.fallX = 0;
+ 		this.fallWidth = 260;
+
 		this.enemyX = app.canvas.width + 40;	// need an array of xPositions
 		this.y = app.canvas.height - 155;
 		this.width = 600;
@@ -42,13 +48,47 @@ class Enemies
 			this.enemyX =  app.canvas.width + 100 + rand;
 		}
 
-		for(this.i = 0; this.i < this.enemyNum; this.i++)
-		{
-			app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
-		}
-		this.enemyX = this.enemyX - this.speed;
-		this.EnemyCollision();
-	}
+		if(this.fall === false)
+ 		{
+ 			for(this.i = 0; this.i < this.enemyNum; this.i++)
+ 			{
+ 				app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+ 			}
+ 			this.enemyX = this.enemyX - this.speed;
+ 		}
+ 		if(this.fall === true)
+ 		{
+			for(this.i = 0; this.i < this.enemyNum; this.i++)
+  			{
+ 				app.ctx.drawImage(this.knock,this.fallX, this.imgY, this.fallWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+ 				var step = 0;
+ 				step++;
+ 				if(step > 30)
+ 				{
+ 					this.fallX += 130;
+ 					step = 0;
+ 				}
+ 				if(this.fallX >= this.fallWidth)
+ 				{
+ 					this.fallX = 0;
+ 					this.fall = false;
+ 					this.UpdatePosition();
+ 					this.Draw();
+ 				}
+ 			}
+ 		}
+ 			//app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+ 			this.enemyX = this.enemyX - this.speed;
+  			this.EnemyCollision();
+  	}
+
+	UpdatePosition()
+ 	{
+ 		this.enemyX = - 400;
+ 		app.score.UpScore();
+ 		this.Draw();
+ 	}
+ 
 
 	Animate(dt)
 	{		
