@@ -10,8 +10,8 @@ class Enemies
  		this.knock.src = "KnockedDown.png";
  		this.fall = false;
  		this.fallX = 0;
- 		this.fallWidth = 260;
-
+ 		this.fallWidth = 120;
+ 		this.alive = true;
 		this.enemyX = app.canvas.width + 40;	// need an array of xPositions
 		this.y = app.canvas.height - 155;
 		this.width = 600;
@@ -20,6 +20,7 @@ class Enemies
 		this.ticksPerFrame = 1000;
 		this.imgX = 720;
 		this.imgY = 0;
+		this.step = 0;
 		this.imgWidth = 120;
 		this.imgHeight = 120;
 		this.count = 0;
@@ -61,19 +62,15 @@ class Enemies
 			for(this.i = 0; this.i < this.enemyNum; this.i++)
   			{
  				app.ctx.drawImage(this.knock,this.fallX, this.imgY, this.fallWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
- 				var step = 0;
- 				step++;
- 				if(step > 30)
+ 				this.step++;
+ 				if(this.step > 20)
  				{
- 					this.fallX += 130;
- 					step = 0;
+ 					this.fallX = 130;
+ 					console.log("STEP");
  				}
- 				if(this.fallX >= this.fallWidth)
+ 				if(this.step > 30)
  				{
- 					this.fallX = 0;
- 					this.fall = false;
  					this.UpdatePosition();
- 					this.Draw();
  				}
  			}
  		}
@@ -86,7 +83,10 @@ class Enemies
  	{
  		this.enemyX = - 400;
  		app.score.UpScore();
- 		this.Draw();
+ 		this.alive = true;
+ 		this.fall = false;
+ 		this.step = 0;
+ 		//this.Draw();
  	}
  
 
@@ -106,10 +106,13 @@ class Enemies
 
 	EnemyCollision()
 	{
-		if(app.player.x < this.enemyX + this.imgWidth && app.player.x + app.player.playerWidth  > this.enemyX && app.player.y < this.y + this.imgHeight && app.player.y + app.player.playerheight > this.y && app.player.crouched === false)
+		if(app.player.x < this.enemyX + this.imgWidth && app.player.x + app.player.playerWidth  > this.enemyX && app.player.y < this.y + this.imgHeight && app.player.y + app.player.playerheight > this.y && this.alive === true)
 		{
 			app.lives.UpdateLives();
 			this.enemyX = -400;
+			this.step = 0;
+			this.fallX = 0;
+ 			this.fall = false;
 		}
 
 	}

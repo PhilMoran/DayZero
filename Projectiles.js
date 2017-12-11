@@ -62,6 +62,7 @@ class Projectiles
 		if(app.enemies.enemyX< this.x[this.bulletNum] + this.width && app.enemies.enemyX + app.enemies.width  > this.x[this.bulletNum] && app.enemies.y < this.y[this.bulletNum] + this.height && app.enemies.y + app.enemies.height > this.y[this.bulletNum])
 		{
 			app.particles.update();
+			app.enemies.alive = false;
 			this.alive[this.bulletNum] = false;
 			//app.enemies.UpdatePosition();
  			app.enemies.fall = true;
