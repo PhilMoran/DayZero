@@ -40,6 +40,7 @@ class Lives
 		}
 		else
 		{
+			app.score.LoseScore();
 			app.scenemanager.scene = 4; // switch to game lose screen
 			this.liveNum = 3;
 		}

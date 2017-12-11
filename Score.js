@@ -2,9 +2,9 @@ class Score
 {
 	constructor()
 	{
-		
+		this.step = 0;
 		this.score = 0;
-		this.x = app.canvas.width - 100;
+		this.x = app.canvas.width - 200;
 		this.y = 40;
 		this.scoreText = new Text();
 	}
@@ -18,6 +18,18 @@ class Score
 		this.scoreText = 'Score: ' + this.score;
 
 		app.ctx.fillText(this.scoreText,this.x, this.y);
+	}
+	ProgressScore()
+	{
+		if(app.player.alive === true)
+		{
+			this.step++;
+			if(this.step > 50)
+			{
+				this.score = this.score + 1;
+				this.step = 0;
+			}
+		}
 	}
 
 	UpScore()

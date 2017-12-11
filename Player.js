@@ -67,6 +67,7 @@ class Player
 			//Clear the screen to be redrawn
 			//app.ctx.clearRect(this.x, this.y, this.playerWidth, this.playerheight);
 			//Drawing image 1
+			app.score.ProgressScore();
 			app.ctx.drawImage(this.sprite,this.rightAnimation,this.direction,this.width/6,this.height/2,this.x,this.y,this.playerWidth,this.playerheight);
 		}
 		app.ctx.drawImage(this.groundSprite,this.groundX--,this.groundY,this.width,60);
