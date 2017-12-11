@@ -3,11 +3,6 @@ class Enemies
 	constructor()
 	{
 		this.img = [];
-		this.knock = new Image();
-		this.knock.src = "KnockedDown.png";
-		this.fall = false;
-		this.fallX = 0;
-		this.fallWidth = 260;
 		this.speed = [];
 		this.enemyNum = 1 ;
 
@@ -46,40 +41,13 @@ class Enemies
 			var rand = Math.floor((Math.random() * 400) + 1);
 			this.enemyX =  app.canvas.width + 100 + rand;
 		}
-		if(this.fall === false)
-		{
-			for(this.i = 0; this.i < this.enemyNum; this.i++)
-			{
-				app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
-			}
-			this.enemyX = this.enemyX - this.speed;
-		}
-		if(this.fall === true)
-		{
-			app.ctx.drawImage(this.knock,this.fallX, this.imgY, this.fallWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
-			var step = 0;
-			step++;
-			if(step > 30)
-			{
-				this.fallX += 130;
-				step = 0;
-			}
-			if(this.fallX >= this.fallWidth)
-			{
-				this.fallX = 0;
-				this.fall = false;
-				this.UpdatePosition();
-				this.Draw();
-			}
-		}
-		this.EnemyCollision();
-	}
 
-	UpdatePosition()
-	{
-		this.enemyX = - 400;
-		app.score.UpScore();
-		this.Draw();
+		for(this.i = 0; this.i < this.enemyNum; this.i++)
+		{
+			app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+		}
+		this.enemyX = this.enemyX - this.speed;
+		this.EnemyCollision();
 	}
 
 	Animate(dt)
@@ -88,9 +56,7 @@ class Enemies
     	if (this.fps >= this.ticksPerFrame/dt) {			// this isnt working here thats why count is used under
         	this.fps = 0;
 			this.imgX -= 120;
-			console.log(this.imgX);
 		}	
-		console.log(this.fps);
 		//Reset the frame locations.
 		if(this.imgX <= 0)
 		{

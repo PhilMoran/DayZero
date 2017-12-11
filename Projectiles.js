@@ -33,7 +33,7 @@ class Projectiles
 		{
 		 app.ctx.drawImage(this.projectileImg[this.bulletNum],this.x[this.bulletNum],this.y[this.bulletNum],this.width,this.height);
 		}
-		// move off screen when is dead it still detects the bullet after it is fired
+
 	}
 
 	Fire()
@@ -61,11 +61,10 @@ class Projectiles
 	{
 		if(app.enemies.enemyX< this.x[this.bulletNum] + this.width && app.enemies.enemyX + app.enemies.width  > this.x[this.bulletNum] && app.enemies.y < this.y[this.bulletNum] + this.height && app.enemies.y + app.enemies.height > this.y[this.bulletNum])
 		{
+			app.particles.update();
 			this.alive[this.bulletNum] = false;
 			console.log("Collision");
 			//Particle and Enemy dies code;
-			//app.enemies.UpdatePosition();
-			app.enemies.fall = true;
 		}
 		if(app.obstacles.x< this.x[this.bulletNum] + this.width && app.obstacles.x + app.obstacles.deskWidth  > this.x[this.bulletNum] && app.obstacles.y < this.y[this.bulletNum] + this.height && app.obstacles.y + app.obstacles.deskHeight > this.y[this.bulletNum])
 		{

@@ -21,14 +21,15 @@ function main()
 	app.player = new Player();
 	app.enemies = new Enemies();
 	app.lives = new Lives();
-	app.score = new Score();
 	app.obstacles = new Obstacles();
 	app.scroll = new ScrollBackground();
 	app.projectile = new Projectiles();
+	app.particles = new Particle();
 	
 	app.scenemanager.currentScene();
 	app.player.Init();
 	app.projectile.Init();
+	app.particles.Init();
 	app.obstacles.Init();
 
 }
