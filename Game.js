@@ -35,6 +35,7 @@ class Game
 			app.obstacles.Draw();
  			app.player.Draw();
  			app.projectile.Fire();
+ 			
  			if(app.enemies.level === 2)
  			{
  				app.enemies.Init();
@@ -43,7 +44,6 @@ class Game
  			}
  			app.lives.Init();
  			app.lives.Draw();
- 			app.score.Draw();
  			//console.log(app.player.sprite);
  			app.obstacles.ObstacleCollision();
  			app.projectile.BulletCollision();
