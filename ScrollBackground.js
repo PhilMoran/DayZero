@@ -11,6 +11,7 @@ class ScrollBackground
 		this.current = new Image();
 		this.next = new Image();
 
+
 		this.wall = new Image();
 		this.window = new Image();
 		this.stairs = new Image();

@@ -38,22 +38,25 @@ class Projectiles
 
 	Fire()
 	{
-		
-		if(this.x[this.bulletNum] > 1000)
-        {
-            this.alive[this.bulletNum] = 0;
-            this.x[this.bulletNum] = app.player.x + 40;
-    		this.y[this.bulletNum] = app.player.y + 40;
-        }
-        if(this.bulletNum ===199)
-        {
-        	this.bulletNum = 0;
-        }
-		if(this.alive[this.bulletNum] === true)
+		if(app.player.isJumping === false)
 		{
-			this.Draw();
-			this.x[this.bulletNum]+=10;
-			this.y[this.bulletNum]+=0.3;
+			
+			if(this.x[this.bulletNum] > 1000)
+	        {
+	            this.alive[this.bulletNum] = 0;
+	            this.x[this.bulletNum] = app.player.x + 40;
+	    		this.y[this.bulletNum] = app.player.y + 40;
+	        }
+	        if(this.bulletNum ===199)
+	        {
+	        	this.bulletNum = 0;
+	        }
+			if(this.alive[this.bulletNum] === true)
+			{
+				this.Draw();
+				this.x[this.bulletNum]+=10;
+				this.y[this.bulletNum]+=0.3;
+			}
 		}
 	}
 	BulletCollision()

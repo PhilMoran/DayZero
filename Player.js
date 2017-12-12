@@ -26,6 +26,9 @@ class Player
 		this.playerWidth = 100;
 		this.playerheight = 180; 
 
+		this.crouchControl = new Image();
+		this.jumpControl = new Image();
+		this.fireControl = new Image();
 
 		this.groundSprite = new Image();
 		this.groundSprite2 = new Image();
@@ -40,6 +43,9 @@ class Player
 		app.ctx = app.canvas.getContext("2d");
 		this.playerSprite.src = 'SpriteSheet.png';
 		this.playerSpriteTwo.src = 'SpriteSheet1.png';
+		this.crouchControl.src = 'Images/Crouch.png';
+		this.jumpControl.src ='Images/Jump.png';
+		this.fireControl.src = 'Images/Fire.png';
 
 		this.sprite = this.playerSpriteTwo;
 		this.groundSprite.src = 'ground.png';
@@ -73,6 +79,10 @@ class Player
 		}
 		app.ctx.drawImage(this.groundSprite,this.groundX--,this.groundY,this.width,60);
 		app.ctx.drawImage(this.groundSprite2,this.groundX2--,this.groundY,this.width,60);
+		app.ctx.drawImage(this.crouchControl,0,app.canvas.height - 90,app.canvas.width,90);
+		app.ctx.drawImage(this.jumpControl,0,0,app.canvas.width,90);
+		app.ctx.drawImage(this.fireControl,app.canvas.width-90,0,90,app.canvas.height);
+
 
 		if(this.groundX+this.width<0)
 		{
