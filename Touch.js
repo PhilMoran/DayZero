@@ -138,5 +138,20 @@ if(app.scenemanager.scene == 3)	//game
 					console.log("CrouchState = " + app.player.crouched);
 				}
 
-		}	 
+		}
+	if(app.scenemanager.scene == 5)	// game lose screen 
+   		{
+			if(event.type == 'touchstart')
+			{	
+				if(event.touches[0].clientX >= app.mainmenu.width - 300 && event.touches[0].clientX <= app.mainmenu.width - 100 &&event.touches[0].clientY >= app.mainmenu.height -120 &&event.touches[0].clientY <= app.mainmenu.height-120+60 )
+				{
+					window.close();
+				}
+				if(event.touches[0].clientX >= app.mainmenu.width-300 && event.touches[0].clientX <= app.mainmenu.width- 100 &&event.touches[0].clientY >= app.mainmenu.height -240 && event.touches[0].clientY <= app.mainmenu.height-240+60 )
+				{
+					app.soundOptions.UpdateButton();
+					app.scenemanager.scene = 0;//Change To Exit
+				}
+			}
+		}	 	 
 }

@@ -16,6 +16,10 @@ class Score
 		{
 			app.enemies.level = 2;	// drawn from game.js
 		}
+		if(this.score > 200)	
+		{
+			app.scenemanager.scene = 5;//Change To winGame
+		}
 
 		app.ctx = app.canvas.getContext("2d");
 		app.ctx.font = "18px NONSTOP";

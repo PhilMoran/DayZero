@@ -2,7 +2,7 @@ class SceneManager
 {
 	constructor()
 	{
-		this.scene = 5;
+		this.scene = 0;
 
 	}
 	currentScene()
