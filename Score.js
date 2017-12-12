@@ -25,7 +25,7 @@ class Score
 		app.ctx.font = "18px NONSTOP";
 		app.ctx.fillStyle = "red";
 
-		this.scoreText = 'Score: ' + this.score;
+		this.scoreText = 'Score: ' + this.score + " / 100";
 
 		app.ctx.fillText(this.scoreText,this.x, this.y);
 	}

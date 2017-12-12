@@ -4,6 +4,7 @@ function menuTapControls(event)
    //handle tap or click.
    	if(app.scenemanager.scene ==0)	//main menu
    		{
+   			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -620 && event.touches[0].clientY <= app.mainmenu.height-620+60 )
@@ -28,12 +29,12 @@ function menuTapControls(event)
 				{
 					app.soundOptions.UpdateButton();
 						app.scenemanager.scene = 4;
-						console.log(app.scenemanager.scene);
 				}
 			}
   		}
   	if(app.scenemanager.scene == 4)	// game lose screen 
    		{
+   			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{	
 				if(event.touches[0].clientX >= app.mainmenu.width - 300 && event.touches[0].clientX <= app.mainmenu.width - 100 &&event.touches[0].clientY >= app.mainmenu.height -120 &&event.touches[0].clientY <= app.mainmenu.height-120+60 )
@@ -44,7 +45,7 @@ function menuTapControls(event)
 				{
 					app.soundOptions.UpdateButton();
 					app.score.score = 0;
-					app.lives.liveNum = 3;
+					app.lives.liveNum = 4;
 					app.enemies.level = 1;
 					app.obstacles.x = -200;
 					app.scenemanager.scene = 0;//Change To Exit
@@ -53,6 +54,7 @@ function menuTapControls(event)
 		}	 
 if(app.scenemanager.scene == 2)	//sound Options
    		{
+   			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{	
 				if(event.touches[0].clientX >= app.mainmenu.width - 130 && event.touches[0].clientX <= app.mainmenu.width - 130+100 &&event.touches[0].clientY >= app.mainmenu.height -180 &&event.touches[0].clientY <= app.mainmenu.height-180+40 )
@@ -73,6 +75,7 @@ if(app.scenemanager.scene == 2)	//sound Options
 		}	 
 if(app.scenemanager.scene == 1)	//game Options
    		{
+   			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{	
 				if(event.touches[0].clientX >= app.mainmenu.width - 130 && event.touches[0].clientX <= app.mainmenu.width - 130+100 &&event.touches[0].clientY >= app.mainmenu.height -180 &&event.touches[0].clientY <= app.mainmenu.height-180+40 )
@@ -105,8 +108,7 @@ if(app.scenemanager.scene == 1)	//game Options
 		}	
 if(app.scenemanager.scene == 3)	//game 
    		{
-   			
-   			
+   			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{	
 				if(event.touches[0].clientX >= app.mainmenu.width - app.mainmenu.width  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height &&event.touches[0].clientY <= app.mainmenu.height - app.mainmenu.height + 80 )
@@ -121,9 +123,6 @@ if(app.scenemanager.scene == 3)	//game
 					app.soundOptions.Crouch();
 					app.player.crouched = true;
 					app.player.Crouch();
-					///app.player.TouchDown();
-					console.log("CrouchState = " + app.player.crouched);
-					
 				}
 				
 				if(event.touches[0].clientX >= app.mainmenu.width - 80  && event.touches[0].clientX <= app.mainmenu.width &&event.touches[0].clientY >= app.mainmenu.height - app.mainmenu.height + 160 &&event.touches[0].clientY <= app.mainmenu.height - 160)
@@ -139,12 +138,12 @@ if(app.scenemanager.scene == 3)	//game
 				{
 					app.player.crouched = false;
 					app.player.Crouch();
-					console.log("CrouchState = " + app.player.crouched);
 				}
 
 		}
 	if(app.scenemanager.scene == 5)	// game lose screen 
    		{
+   			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{	
 				if(event.touches[0].clientX >= app.mainmenu.width - 300 && event.touches[0].clientX <= app.mainmenu.width - 100 &&event.touches[0].clientY >= app.mainmenu.height -120 &&event.touches[0].clientY <= app.mainmenu.height-120+60 )
@@ -155,7 +154,7 @@ if(app.scenemanager.scene == 3)	//game
 				{
 					app.soundOptions.UpdateButton();
 					app.score.score = 0;
-					app.lives.liveNum = 3;
+					app.lives.liveNum = 4;
 					app.enemies.level = 1;
 					app.obstacles.x = -200;
 					app.scenemanager.scene = 0;//Change To Exit

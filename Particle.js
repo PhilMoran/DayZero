@@ -32,7 +32,6 @@ class Particle {
       var velocity = this.getVelocity();
       this.oldY = app.canvas.height-10;
       this.y = this.oldY - velocity.y * 2;
-      console.log("Bounce");
     }
   }
   draw() {

@@ -67,15 +67,13 @@ class Enemies
  				if(this.step > 20)
  				{
  					this.fallX = 130;
- 					console.log("STEP");
  				}
  				if(this.step > 50)
  				{
  					this.UpdatePosition();
  				}
  			}
- 		}
- 			//app.ctx.drawImage(this.img[this.i],this.imgX, this.imgY, this.imgWidth, this.imgHeight, this.enemyX,this.y,this.width/6, this.height);	// array of images drawn on top of each other 
+ 		} 
  			this.enemyX = this.enemyX - this.speed;
   			this.EnemyCollision();
   	}
@@ -88,14 +86,13 @@ class Enemies
  		this.fall = false;
  		this.step = 0;
  		app.particles.reset();
- 		//this.Draw();
  	}
  
 
 	Animate(dt)
 	{		
 		this.fps += 8;
-    	if (this.fps >= this.ticksPerFrame/dt) {			// this isnt working here thats why count is used under
+    	if (this.fps >= this.ticksPerFrame/dt) {	
         	this.fps = 0;
 			this.imgX -= 120;
 		}	

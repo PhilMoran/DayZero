@@ -41,7 +41,7 @@ class WinGame
 			this.menuText = 'Menu'
 			this.quitText = 'Quit'
 
-			this.scoreText = 'Your score is: ' + app.score.score * app.lives.liveNum;
+			this.scoreText = 'Your score is: ' + app.score.score * 8 / app.lives.liveNum;
 
 			app.ctx.fillText(this.scoreText,this.scoreX, this.scoreY);
 			app.ctx.fillText(this.titleText,this.width/2 - 100, 100);
