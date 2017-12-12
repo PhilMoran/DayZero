@@ -11,6 +11,7 @@ class Player
 		this.alive = true;
 		this.fps =0;
 		this.fps2 =0;
+		this.jumpVelocity = 10;
 		this.delay = 0;
 
 		this.playerTexture = 0;
@@ -84,9 +85,9 @@ class Player
 	}
 	TouchUp()	//called from touch class
 	{
-		if(this.y = app.canvas.height - 195)
+		if(this.y >= app.canvas.height - 195)
 		{
-			this.Jump();
+			this.isJumping = true;
 		}
 	}
 
@@ -97,7 +98,7 @@ class Player
 
 	TouchDown()
 	{
-		if(this.y = app.canvas.height - 195)
+		if(this.y <= app.canvas.height - 195)
 		{
 			this.Shoot();
 		}
@@ -105,7 +106,17 @@ class Player
 
 	Jump()
 	{
-		this.y -= 20;
+			if(this.isJumping === true)
+			{
+				this.jumpVelocity -= 0.1;
+				this.y -= this.jumpVelocity;
+				
+			}
+			if(this.isJumping === true && this.y >= app.canvas.height - this.playerheight && this.jumpVelocity <0)
+			{
+				this.isJumping = false;
+				this.jumpVelocity = 10;
+			}
 	}
 
 	Crouch()
@@ -149,7 +160,10 @@ class Player
 		{
 			this.rightAnimation =0;
 		}
-
+		if(this.isJumping === true)
+		{
+			this.rightAnimation = 768;
+		}
 	}
 	
 };

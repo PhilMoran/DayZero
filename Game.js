@@ -34,6 +34,7 @@ class Game
 			app.scroll.Draw();
 			app.obstacles.Draw();
  			app.player.Draw();
+ 			app.player.Jump();
  			app.projectile.Fire();
  			
  			if(app.enemies.level === 2)
