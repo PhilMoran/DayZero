@@ -60,7 +60,7 @@ class Game
  		}
  		if(app.scenemanager.scene ==5)	// win screen
 		{
- 			
+ 			app.winGame.Draw();
  		}
 
 		window.requestAnimationFrame(app.game.Update);

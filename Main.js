@@ -18,6 +18,7 @@ function main()
 	app.game = new Game();
 	app.mainmenu = new MainMenu();
 	app.gameOver = new GameOver();
+	app.winGame = new WinGame();
 	app.player = new Player();
 	app.enemies = new Enemies();
 	app.lives = new Lives();

@@ -2,7 +2,7 @@ class SceneManager
 {
 	constructor()
 	{
-		this.scene = 0;
+		this.scene = 5;
 
 	}
 	currentScene()
@@ -12,6 +12,7 @@ class SceneManager
 		app.gameOver = new GameOver();
 		app.soundOptions = new SoundOptions();
 		app.gameOptions = new GameOptions();
+		app.winGame = new WinGame();
 		app.player = new Player();
 		app.lives = new Lives();
 		
@@ -45,7 +46,7 @@ class SceneManager
 		}
 		if(this.scene == 5)	// win scene
 		{
-
+			app.game.Update();
 		}
 	}
 	
