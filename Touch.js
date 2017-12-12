@@ -43,6 +43,10 @@ function menuTapControls(event)
 				if(event.touches[0].clientX >= app.mainmenu.width-300 && event.touches[0].clientX <= app.mainmenu.width- 100 &&event.touches[0].clientY >= app.mainmenu.height -240 && event.touches[0].clientY <= app.mainmenu.height-240+60 )
 				{
 					app.soundOptions.UpdateButton();
+					app.score.score = 0;
+					app.lives.liveNum = 3;
+					app.enemies.level = 1;
+					app.obstacles.x = -200;
 					app.scenemanager.scene = 0;//Change To Exit
 				}
 			}
@@ -153,7 +157,7 @@ if(app.scenemanager.scene == 3)	//game
 					app.score.score = 0;
 					app.lives.liveNum = 3;
 					app.enemies.level = 1;
-					app.obstacles.x = -20;
+					app.obstacles.x = -200;
 					app.scenemanager.scene = 0;//Change To Exit
 				}
 			}

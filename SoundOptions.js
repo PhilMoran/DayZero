@@ -30,6 +30,8 @@ class SoundOptions
 		this.effectImg = this.soundImg;
 		this.musicImg = this.soundImg;
 
+		this.music = new Audio('music.wav');
+
 		this.muteEffectText = 'Mute Sound Effects'
 		this.muteMusicText = 'Mute Music'
 		this.backText = 'Back'
@@ -98,8 +100,10 @@ class SoundOptions
 	{
 		if(this.musicImg === this.soundImg)		
 		{
-			var audio = new Audio('music.wav');
-			audio.play();
+			if(this.music.play() != true)
+			{
+				this.music.play();
+			}
 		}
 	}
 
