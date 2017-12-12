@@ -3,7 +3,7 @@ class Player
 	constructor()
 	{
  		this.x = 100;
-		this.y = app.canvas.height-180;
+		this.y = app.canvas.height-165;
 		this.x1 = 500;
 		this.y1 = 200;
 		this.width = 1536;
@@ -114,13 +114,13 @@ class Player
 		if(this.crouched === true)
 		{
 			this.playerheight = this.playerheight / 2;
-			this.y = this.y +this.playerheight/1.1;
+			this.y = this.y + this.playerheight / 2  + 15;
 		}
 		if(this.crouched === false)
 		{
 
 			this.playerheight = 180;
-			this.y = app.canvas.height - 195;
+			this.y = app.canvas.height - 165;
 		}
 	}
 

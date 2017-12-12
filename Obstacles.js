@@ -3,7 +3,7 @@ class Obstacles
 	constructor()
 	{
  		this.boxObstacle = [];
- 		this.x = app.canvas.width 
+ 		this.x = app.canvas.width ;
  		this.y = app.canvas.height - 400;
  		this.boxWidth = 400;
  		this.boxHeight = 400;

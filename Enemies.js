@@ -42,7 +42,7 @@ class Enemies
 	{
 		if(this.enemyX < 0)
 		{
-			var moveX = Math.floor((Math.random() * 7) + 1);
+			var moveX = Math.floor((Math.random() * 4) + 1);
 			this.speed = moveX;
 
 			var rand = Math.floor((Math.random() * 400) + 1);

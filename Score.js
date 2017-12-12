@@ -11,6 +11,12 @@ class Score
 
 	Draw()
 	{
+
+		if(this.score > 40)	// when score is implemented remove this and change level there
+		{
+			app.enemies.level = 2;	// drawn from game.js
+		}
+
 		app.ctx = app.canvas.getContext("2d");
 		app.ctx.font = "18px NONSTOP";
 		app.ctx.fillStyle = "red";

@@ -69,12 +69,12 @@ class Projectiles
 			console.log("Collision");
 			//Particle and Enemy dies code;
 		}
-		if(app.obstacles.x< this.x[this.bulletNum] + this.width && app.obstacles.x + app.obstacles.deskWidth  > this.x[this.bulletNum] && app.obstacles.y < this.y[this.bulletNum] + this.height && app.obstacles.y + app.obstacles.deskHeight > this.y[this.bulletNum])
-		{
-			this.alive[this.bulletNum] = false;
-			console.log("Collision");
+		//if(app.obstacles.x< this.x[this.bulletNum] + this.width && app.obstacles.x + app.obstacles.deskWidth  > this.x[this.bulletNum] && app.obstacles.y < this.y[this.bulletNum] + this.height && app.obstacles.y + app.obstacles.deskHeight > this.y[this.bulletNum])
+		//{
+			//this.alive[this.bulletNum] = false;
+			//console.log("Collision");
 			//Particle Code
-		}
+		//}
 	}
 
 }
