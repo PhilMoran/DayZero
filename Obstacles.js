@@ -18,10 +18,11 @@ class Obstacles
  		this.deskWidth = 400;
  		this.randomObj = 0;
 
- 		this.crouchObstacle = [];
- 		this.tableHeight = 400;
- 		this.tableWidth = 400;
- 		this.randomObj = 0;
+ 		this.crouchObstacle = new Image();
+ 		this.crouchHeight = 855;
+ 		this.crouchWidth = 140;
+ 		this.crouchFrameWidth = 0;
+
 
 	}
 	Init()
@@ -42,6 +43,7 @@ class Obstacles
 		this.emptyDeskObstacle[this.i] = new Image();
 		this.emptyDeskObstacle[this.i].src = "Images/Desk2.png";
 		}
+		this.crouchObstacle.src = "Images/Electricity.png";
 		console.log("init");
 	}
 
@@ -67,7 +69,10 @@ class Obstacles
 				{
 				app.ctx.drawImage(this.emptyDeskObstacle[0] ,this.x ,this.y,this.deskWidth,this.deskHeight);
 				}
-				
+				if(this.randomObj === 3)
+				{
+					app.ctx.drawImage(this.crouchObstacle ,this.crouchFrameWidth ,0,this.crouchWidth,this.crouchHeight,0,0,1024,585);
+				}
 	}
 	ObstacleCollision()
 	{
