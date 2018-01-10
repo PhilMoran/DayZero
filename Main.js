@@ -3,8 +3,8 @@ app = {};
 function main()
 {
     //Setting values to the variables initalized 
-		
-	 //Creates a new canvas element 
+
+	//Creates a new canvas element 
     app.canvas = document.createElement("canvas");
     //Adds the canvas element to the document 
     document.body.appendChild(app.canvas);
@@ -14,6 +14,22 @@ function main()
 
 	document.addEventListener("touchend", menuTapControls, false);
 	document.addEventListener("touchstart", menuTapControls, false);
+
+	var request = new XMLHttpRequest();
+	request.addEventListener("load", function requestListener(){
+    //TADA! Now I have the class data.
+    var data = JSON.parse(this.responseText);
+    var win = data.images[0];
+    var lose = data.images[1];
+    var main = data.images[3];
+    var sound = data.images[4];
+    var win = data.images[5];
+	});
+	//var requestURL = 'https://github.com/PhilMoran/DayZero/blob/master/AssetLoader.JSON';
+	//request.open('GET', 'https://github.com/PhilMoran/DayZero/blob/master/AssetLoader.JSON');
+	//request.responseType = 'json';
+	//request.send();
+
 	app.scenemanager = new SceneManager();
 	app.game = new Game();
 	app.mainmenu = new MainMenu();
@@ -36,6 +52,13 @@ function main()
 
 }
 
+
+/*request.onload = function()
+{
+	var data = request.response;
+    populateHeader(data);
+    data(data);
+}*/
 
 function rgb(r, g, b) 
 { 
