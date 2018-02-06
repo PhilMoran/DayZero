@@ -7,6 +7,14 @@ function menuTapControls(event)
    			 event.preventDefault();
 			if(event.type == 'touchstart')
 			{
+				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -760 && event.touches[0].clientY <= app.mainmenu.height-760+60 )
+				{
+					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
+					app.soundOptions.UpdateButton();
+					app.soundOptions.UpdateMusic();
+					app.scenemanager.scene = 3;
+
+				}
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -620 && event.touches[0].clientY <= app.mainmenu.height-620+60 )
 				{
 					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
