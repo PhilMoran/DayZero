@@ -40,6 +40,7 @@ function main()
 	app.lives = new Lives();
 	app.score = new Score();
 	app.obstacles = new Obstacles();
+	app.key = new passKey();
 	app.scroll = new ScrollBackground();
 	app.projectile = new Projectiles();
 	app.particles = new Particle();

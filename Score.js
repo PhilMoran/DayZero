@@ -16,7 +16,7 @@ class Score
 		{
 			app.enemies.level = 2;	// drawn from game.js
 		}
-		if(this.score > 100)	
+		if(this.score > 100 && app.key.collect === true)	
 		{
 			app.scenemanager.scene = 5;//Change To winGame
 		}

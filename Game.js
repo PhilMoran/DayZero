@@ -33,6 +33,8 @@ class Game
 			app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height );
 			app.scroll.Draw();
 			app.obstacles.Draw();
+			app.key.Init();
+			app.key.Draw();
  			app.player.Draw();
  			app.player.Jump();
  			app.projectile.Fire();
@@ -47,6 +49,7 @@ class Game
  			app.lives.Draw();
  			app.score.Draw();
  			//console.log(app.player.sprite);
+ 			app.key.ObstacleCollision();
  			app.obstacles.ObstacleCollision();
  			app.projectile.BulletCollision();
  			//animating the player
