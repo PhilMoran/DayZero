@@ -36,7 +36,7 @@ class MainMenu
 			this.soundText = 'Game Options';
 			this.quitText = 'Quit';
 
-			app.ctx.fillText(this.playText,130,this.height - 740);
+			app.ctx.fillText(this.playText,130,this.height - 720);
 			app.ctx.fillText(this.multiText,130,this.height - 580);
 			app.ctx.fillText(this.gameText,130,this.height - 420);
 			app.ctx.fillText(this.soundText,130,this.height - 260);

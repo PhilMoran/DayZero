@@ -49,6 +49,7 @@ function main()
 	app.player.Init();
 	app.projectile.Init();
 	app.particles.Init();
+	app.key.Init();
 	app.obstacles.Init();
 
 }

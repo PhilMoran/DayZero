@@ -22,6 +22,7 @@ class SceneManager
 		
 		if(this.scene ==0)	// main menu
 		{ 
+			app.key.collect = false;
 			app.game.Update();
 			console.log("MainMenuLOADED");
 		}

@@ -33,8 +33,6 @@ class Game
 			app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height );
 			app.scroll.Draw();
 			app.obstacles.Draw();
-			app.key.Init();
-			app.key.Draw();
  			app.player.Draw();
  			app.player.Jump();
  			app.projectile.Fire();
@@ -52,6 +50,9 @@ class Game
  			app.key.ObstacleCollision();
  			app.obstacles.ObstacleCollision();
  			app.projectile.BulletCollision();
+ 			//Draw Key card and detect collisions
+ 			app.key.Draw();
+ 			app.key.ObstacleCollision();
  			//animating the player
  			app.player.Animate(deltaTime);
  			app.enemies.Animate(deltaTime);
