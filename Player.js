@@ -37,6 +37,8 @@ class Player
 		this.groundY = app.canvas.height - 40;
 		this.crouched = false;
 
+		this.tut = false;
+
 	}
 	Init()
 	{
@@ -79,11 +81,15 @@ class Player
 		}
 		app.ctx.drawImage(this.groundSprite,this.groundX--,this.groundY,this.width,60);
 		app.ctx.drawImage(this.groundSprite2,this.groundX2--,this.groundY,this.width,60);
-		app.ctx.drawImage(this.crouchControl,0,app.canvas.height - 90,app.canvas.width,90);
-		app.ctx.drawImage(this.jumpControl,0,0,app.canvas.width,90);
-		app.ctx.drawImage(this.fireControl,app.canvas.width-90,0,90,app.canvas.height);
-
-
+		if(app.obstacles.box === true && this.tut === true)
+		{
+			app.ctx.drawImage(this.crouchControl,0,app.canvas.height - 90,app.canvas.width,90);
+			app.ctx.drawImage(this.jumpControl,0,0,app.canvas.width,90);
+		}
+		if(app.enemies.bull === true && this.tut === true)
+		{
+			app.ctx.drawImage(this.fireControl,app.canvas.width-90,0,90,app.canvas.height);
+		}
 		if(this.groundX+this.width<0)
 		{
 			this.groundX = this.width;

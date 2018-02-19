@@ -28,6 +28,8 @@ class Enemies
 		this.speed = 3;
 		this.level = 1;
 
+		this.bull = false;
+
 	}
 	Init()
 	{
@@ -40,6 +42,10 @@ class Enemies
 
 	Draw()
 	{
+		if(this.enemyX < app.canvas.width/2)
+		{
+			this.bull = true;
+		}
 		if(this.enemyX < 0)
 		{
 			var moveX = Math.floor((Math.random() * 4) + 1);
@@ -47,6 +53,7 @@ class Enemies
 
 			var rand = Math.floor((Math.random() * 400) + 1);
 			this.enemyX =  app.canvas.width + 100 + rand;
+			this.bull = false;
 		}
 
 		if(this.fall === false)

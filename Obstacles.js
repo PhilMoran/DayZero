@@ -23,6 +23,8 @@ class Obstacles
  		this.crouchWidth = 140;
  		this.crouchFrameWidth = 0;
 
+ 		this.box = false;
+
 
 	}
 	Init()
@@ -50,10 +52,16 @@ class Obstacles
 	//Function to draw the 2 sprites
 	Draw()
 	{			
+
 				this.x -=5;
+				if(this.x < app.canvas.width /2)
+				{
+					this.box = true;
+				}
 				if(this.x <= 0 - this.deskWidth)
 				{
 					this.randomObj = Math.floor((Math.random() * 3));
+					this.box = false;
 					//console.log(this.randomObj);
 					this.x = app.canvas.width + Math.floor((Math.random() * 1000));
 				}

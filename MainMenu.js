@@ -8,16 +8,19 @@ class MainMenu
 		this.height= window.innerHeight;
 		this.menuSprite = new Image();
 		this.buttonImg = new Image();
+		this.tutorialImage = new Image();
 		this.multiText = new Text();
 		this.playText = new Text();
 		this.soundText = new Text();
 		this.quitText = new Text();
+		this.tutorialText = new Text();
 	}
 	Draw()
 	{
 			//Drawing image 1
 			this.menuSprite.src = 'bossImg.jpg';
 			this.buttonImg.src = 'button.png';
+			this.tutorialImage.src = 'TutorialButton.png'
 
 			app.ctx.drawImage(this.menuSprite,this.x,this.y,this.width,this.height);
 			app.ctx.drawImage(this.buttonImg,100,this.height - 760, 300, 60);
@@ -25,6 +28,7 @@ class MainMenu
 			app.ctx.drawImage(this.buttonImg,100,this.height - 460, 420, 60);
 			app.ctx.drawImage(this.buttonImg,100,this.height - 300, 420, 60);
 			app.ctx.drawImage(this.buttonImg,100,this.height - 140, 300, 60);
+			app.ctx.drawImage(this.tutorialImage, this.width - 330, this.height - 140, 300, 60);
 
 			app.ctx = app.canvas.getContext("2d");
 			app.ctx.font = "40px NONSTOP";
@@ -35,13 +39,13 @@ class MainMenu
 			this.gameText = 'Sound Options';
 			this.soundText = 'Game Options';
 			this.quitText = 'Quit';
+			this.tutorialText = 'Tutorial';
 
 			app.ctx.fillText(this.playText,130,this.height - 720);
 			app.ctx.fillText(this.multiText,130,this.height - 580);
 			app.ctx.fillText(this.gameText,130,this.height - 420);
 			app.ctx.fillText(this.soundText,130,this.height - 260);
 			app.ctx.fillText(this.quitText,130,this.height - 100);
-
+			app.ctx.fillText(this.tutorialText, this.width - 250, this.height - 100);
 	}
-
 }

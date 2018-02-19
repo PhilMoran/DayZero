@@ -29,9 +29,7 @@ class passKey
 			console.log(this.x);
 			if(this.x <= 0 - this.keyWidth)
 			{
-				app.lives.UpdateLives();
 				this.x = app.canvas.width + Math.floor((Math.random() * 10000));
-				
 			}
 			app.ctx.drawImage(this.key ,this.x ,this.y,this.keyWidth,this.keyHeight);
 		}
@@ -42,7 +40,7 @@ class passKey
 	}
 	ObstacleCollision()
 	{
-		if(app.player.x < this.x + this.keyWidth && app.player.x + app.player.playerWidth  > this.x && app.player.y > this.y - this.keyHeight && app.player.y - app.player.playerheight > this.y && app.player.crouched === false)
+		if(app.player.x < this.x + this.keyWidth && app.player.x + app.player.playerWidth  > this.x && app.player.y > this.y - this.keyHeight && app.player.y + app.player.playerheight > this.y && app.player.crouched === false)
 		{
 			this.alive = false;
 			this.collect = true;
