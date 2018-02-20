@@ -44,6 +44,7 @@ function main()
 	app.scroll = new ScrollBackground();
 	app.projectile = new Projectiles();
 	app.particles = new Particle();
+	app.network = new Network();
 	
 	app.scenemanager.currentScene();
 	app.player.Init();

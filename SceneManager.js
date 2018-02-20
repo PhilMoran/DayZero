@@ -36,7 +36,6 @@ class SceneManager
 		}
 		if(this.scene == 3)	// game
 		{
-			
 			//Initializing the game
 			app.game.Init();
 			app.game.Update();
@@ -48,6 +47,13 @@ class SceneManager
 		if(this.scene == 5)	// win scene
 		{
 			app.game.Update();
+		}
+		if(this.scene == 6)	// Multiplayer scene
+		{
+			//app.network.Draw();
+			
+			app.game.Update();
+			app.network.Update();
 		}
 	}
 	
