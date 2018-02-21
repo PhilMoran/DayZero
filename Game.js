@@ -67,7 +67,11 @@ class Game
 		{
  			app.winGame.Draw();
  		}
-
+ 		if(app.scenemanager.scene ==6)	// win screen
+		{
+ 			app.network.Draw();
+ 			console.log("Multiplayer");
+ 		}
 		window.requestAnimationFrame(app.game.Update);
  	}
 };

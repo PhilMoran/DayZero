@@ -28,9 +28,10 @@ function menuTapControls(event)
 				{	///Tutorial
 					app.player.tut = true;
 					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
-					app.soundOptions.UpdateButton();
-					app.soundOptions.UpdateMusic();
-					app.scenemanager.scene = 3;
+					//app.soundOptions.UpdateButton();
+					//app.soundOptions.UpdateMusic();
+					app.scenemanager.scene = 6;
+					app.network.Create();
 
 				}
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -460 && event.touches[0].clientY <= app.mainmenu.height-460+60 )
