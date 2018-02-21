@@ -19,10 +19,8 @@ function menuTapControls(event)
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -620 && event.touches[0].clientY <= app.mainmenu.height-620+60 )
 				{	///multiplayer
 					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
-					app.soundOptions.UpdateButton();
-					app.soundOptions.UpdateMusic();
-					app.scenemanager.scene = 3;
-
+					app.scenemanager.scene = 6;
+					app.network.Create();
 				}
 				if(event.touches[0].clientX >= app.canvas.width - 330 && event.touches[0].clientX <= app.canvas.width - 330 +300 &&event.touches[0].clientY >= app.mainmenu.height -140 && event.touches[0].clientY <= app.mainmenu.height-140+60)
 				{	///Tutorial
@@ -30,8 +28,8 @@ function menuTapControls(event)
 					app.ctx.clearRect(0, 0, app.canvas.width, app.canvas.height);
 					//app.soundOptions.UpdateButton();
 					//app.soundOptions.UpdateMusic();
-					app.scenemanager.scene = 6;
-					app.network.Create();
+					app.scenemanager.scene = 3;
+					//app.network.Create();
 
 				}
 				if(event.touches[0].clientX >= 100 && event.touches[0].clientX <= 100+300 &&event.touches[0].clientY >= app.mainmenu.height -460 && event.touches[0].clientY <= app.mainmenu.height-460+60 )
