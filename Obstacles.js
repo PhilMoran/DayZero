@@ -54,7 +54,7 @@ class Obstacles
 	{			
 
 				this.x -=5;
-				if(this.x < app.canvas.width /2)
+				if(this.x < app.canvas.width /1.2)
 				{
 					this.box = true;
 				}

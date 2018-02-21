@@ -29,6 +29,7 @@ class Player
 		this.crouchControl = new Image();
 		this.jumpControl = new Image();
 		this.fireControl = new Image();
+		this.Objectives = new Image();
 
 		this.groundSprite = new Image();
 		this.groundSprite2 = new Image();
@@ -48,6 +49,7 @@ class Player
 		this.crouchControl.src = 'Images/Crouch.png';
 		this.jumpControl.src ='Images/Jump.png';
 		this.fireControl.src = 'Images/Fire.png';
+		this.Objectives.src = 'Images/Objectives.png';
 
 		this.sprite = this.playerSpriteTwo;
 		this.groundSprite.src = 'ground.png';
@@ -90,6 +92,10 @@ class Player
 		{
 			app.ctx.drawImage(this.fireControl,app.canvas.width-90,0,90,app.canvas.height);
 		}
+		if(this.tut === true)
+		{
+			app.ctx.drawImage(this.Objectives,app.canvas.width/12,app.canvas.height/8,300,200);
+		}
 		if(this.groundX+this.width<0)
 		{
 			this.groundX = this.width;
@@ -98,6 +104,7 @@ class Player
 		{
 			this.groundX2 =  this.width;
 		}
+
 	}
 	TouchUp()	//called from touch class
 	{
@@ -105,6 +112,7 @@ class Player
 		{
 			this.isJumping = true;
 		}
+
 	}
 
 	TouchDown()

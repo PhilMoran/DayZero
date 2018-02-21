@@ -10,6 +10,7 @@ class Lives
 		this.width = 30;
 		this.height = 30;
 		this.life = 0;
+		this.hurting = new Image();
 	}
 	Init()
 	{
@@ -26,6 +27,19 @@ class Lives
 		{
 			app.ctx.drawImage(this.sprite[this.i],this.posX[this.i],this.y,this.width, this.height);
 		}
+		if(this.liveNum >= 3)
+		{
+			this.hurting.src = '';
+		}
+		if(this.liveNum === 2)
+		{
+			this.hurting.src = 'Images/MediumHurt.png';
+		}
+		if(this.liveNum === 1)
+		{
+			this.hurting.src = 'Images/ReallyHurt.png';
+		}
+		app.ctx.drawImage(this.hurting,0,0,app.canvas.width, app.canvas.height);
 	}
 	UpdateLives()		
 	{
@@ -41,5 +55,6 @@ class Lives
 			this.liveNum = 4;
 			app.score.score = 0;
 		}
+
 	}
 }
